@@ -1,0 +1,94 @@
+/* ベーススタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366; /* ネイビー */
+    color: white;
+    padding: 0px 40px;
+  }
+  
+  header .logo img {
+    width: 130px;
+     height: 80px; /* ロゴのサイズ */
+    margin-left:30px;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    margin-right: 80px;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin-left: 60px;
+    font-size: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* メインビジュアル */
+  .main-visual {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .main-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* メインコンテンツ */
+  main {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
