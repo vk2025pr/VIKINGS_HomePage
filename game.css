@@ -1,0 +1,84 @@
+/* 基本的なスタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ヘッダー */
+header {
+    
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* 試合セクション */
+.schedule {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top:40px
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 各試合のスタイル */
+.match {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-logo {
+    width: 50px;
+    height: auto;
+}
+
+.team-info p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* 試合の日付と結果 */
+.date {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.result {
+    font-size: 1.2rem;
+    color: #e74c3c; /* 結果の色を赤に */
+    margin-top: 10px;
+}
+
+/* リンクのスタイル */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,77 @@
+/* 全体の基本スタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding-left:80px;
+    padding-top:20px;
+}
+
+/* チーム紹介セクション */
+.team-section1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left:80px;
+    padding-right:80px;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+/* 各チームのスタイル */
+.team {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* ロゴ画像のスタイル */
+.team-logo {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* ロゴサイズ調整 */
+    margin-bottom: 10px;
+}
+
+/* チーム名のスタイル */
+.team-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* チーム説明のスタイル */
+.team-description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.team-section2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left:80px;
+    padding-right:80px;
+    padding-top: 10px;
+    gap: 0px;
+}
