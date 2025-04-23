@@ -60,7 +60,7 @@ body {
   
   /* メインコンテンツ */
   main {
-    padding: 20px;
+    margin: 0 auto;
   }
   
   h1 {
@@ -87,8 +87,123 @@ body {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: static; /* フッターを通常のフローに戻す */
     width: 100%;
     bottom: 0;
   }
   
+
+  /* contact.html 用のスタイル */
+body.contact-page {
+    background-image: url('images/hiramatsu.jpeg'); /* 背景画像を指定 */
+    background-size: cover; /* 画面全体に画像を拡大 */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    position: relative;
+}
+
+body.contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* 白の半透明オーバーレイ */
+    z-index: -1; /* 背景として配置 */
+}
+
+#contact {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* 背景を白の半透明に */
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact h1 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#contact ul li a {
+    color: #003366;
+    text-decoration: none;
+}
+
+#contact ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* お問い合わせフォームのスタイル */
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.9); /* 背景を白の半透明に */
+    padding: 20px;
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+    max-width: 600px; /* フォームの最大幅 */
+    margin: 40px auto; /* 中央揃え */
+}
+
+.contact-form h2 {
+    font-size: 1.8rem;
+    color: #003366; /* テーマカラー */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* 幅をフォーム全体に */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 5px; /* 角を丸くする */
+    font-size: 1rem;
+    box-sizing: border-box; /* パディングを含めた幅を計算 */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #003366; /* フォーカス時の枠線の色 */
+    outline: none; /* デフォルトのアウトラインを削除 */
+    box-shadow: 0 0 5px rgba(0, 51, 102, 0.5); /* フォーカス時の影 */
+}
+
+.contact-form button {
+    background-color: #003366; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0055aa; /* ホバー時の背景色 */
+}
+
+

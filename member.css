@@ -1,0 +1,120 @@
+/* ベーススタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366; /* ネイビー */
+    color: white;
+    padding: 0px 40px;
+  }
+  
+  header .logo img {
+    width: 130px;
+     height: 80px; /* ロゴのサイズ */
+    margin-left:30px;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    margin-right: 80px;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin-left: 60px;
+    font-size: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* メインビジュアル */
+  .main-visual {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .main-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* メンバーリスト */
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    padding-left:80px;
+    padding-right:80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .member-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .member-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .member-info {
+    margin-top: 10px;
+  }
+  
+  .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003366;
+  }
+  
+  .position {
+    font-size: 1rem;
+    color: #666;
+
+
+
+
+
+
+
+
+
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+}
+  
