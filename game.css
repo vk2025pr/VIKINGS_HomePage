@@ -16,7 +16,8 @@ header {
 }
 
 h1 {
-    margin: 0;
+    padding-left: 80px;
+    padding-top:40px
     font-size: 2rem;
 }
 
@@ -31,7 +32,7 @@ h1 {
 }
 
 /* 各試合のスタイル */
-.match {
+.match-info {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -45,7 +46,7 @@ h1 {
 }
 
 .team-logo {
-    width: 50px;
+    width: 80px;
     height: auto;
 }
 
@@ -81,4 +82,39 @@ h1 {
 
 .links a:hover {
     text-decoration: underline;
+}
+
+
+
+
+
+/* 横並びにする */
+.infomation-all, .match-result-sheet {
+    display: inline-block; /* 横並びにする */
+    vertical-align: top; /* 上揃え */
+    width: 48%; /* 各要素の幅を調整 */
+    margin-right: 2%; /* 間隔を設定 */
+}
+
+
+.match-result-sheet {
+    margin-right: 0; /* 最後の要素の右余白を削除 */
+}
+
+/* 表のスタイル */
+.match-result-sheet table {
+    width: 100%; /* 表を親要素の幅に合わせる */
+    border-collapse: collapse; /* 枠線を統一 */
+    margin-top: 10px;
+}
+
+.match-result-sheet th, .match-result-sheet td {
+    border: 1px solid #ccc; /* セルの枠線 */
+    padding: 8px; /* セル内の余白 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.match-result-sheet th {
+    background-color: #f4f4f4; /* ヘッダーの背景色 */
+    font-weight: bold; /* ヘッダーの文字を太字に */
 }
