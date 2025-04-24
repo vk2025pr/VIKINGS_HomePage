@@ -59,8 +59,22 @@ main {
 
 
 
-.team-name-kama {
+.team-name-small {
     font-size: 1.0rem;
     font-weight: bold;
     margin-top: 0px
+}
+
+
+
+.team-sectionf {
+    display: flex;
+    
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left:200px;
+    padding-right:120px;
+    padding-top: 5px;
+    padding: bottom 40px;
+    gap: 15px;
 }
