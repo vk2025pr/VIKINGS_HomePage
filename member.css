@@ -95,6 +95,33 @@ body {
   padding-top: 10px;
   padding-bottom: 40px;
 }
+
+/* スマホ版のレイアウト調整 */
+@media screen and (max-width: 600px) {
+  .member-list {
+      display: grid;
+      grid-template-columns: 1fr; /* 1列で表示 */
+      gap: 10px;
+      padding-left: 10px;  /* 横の余白を減らす */
+      padding-right: 10px;
+  }
+  
+  .member-card {
+      width: 100%; /* 各カードの横幅を100%に */
+      box-sizing: border-box; /* パディングを含むように調整 */
+  }
+  
+  /* 画像サイズを調整（必要に応じて） */
+  .member-card img {
+      width: 100%; /* 画像が親要素に合わせて伸縮 */
+      height: auto; /* 縦横比を維持 */
+  }
+  
+  /* メンバー情報を中央揃え */
+  .member-info {
+      text-align: center;
+  }
+}
   
   .member-card {
     background-color: white;
@@ -135,7 +162,6 @@ body {
   }
 
 
-
   .captain-member .captain-badge{
     position: absolute;
     top: 10px;  /* 左上に配置 */
@@ -147,23 +173,7 @@ body {
     border-radius: 15px; /* 角を丸く */
   }
 
-  @media (max-width: 1200px) {
-    .member-list {
-      grid-template-columns: repeat(3, 1fr); /* 画面幅が小さくなったら3列 */
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .member-list {
-      grid-template-columns: repeat(2, 1fr); /* 画面幅がさらに小さくなったら2列 */
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .member-list {
-      grid-template-columns: 1fr; /* モバイルでは1列 */
-    }
-  }
+ 
 
 
 

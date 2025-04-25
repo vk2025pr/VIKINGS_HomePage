@@ -228,3 +228,50 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+    .schedule {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .match-info {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .team-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .team-logo {
+        width: 60px;
+        height: auto;
+    }
+
+    .team-info p {
+        font-size: 1rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    #toggle-gallery {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .close {
+        font-size: 30px;
+    }
+}

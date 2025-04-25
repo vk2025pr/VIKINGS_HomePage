@@ -19,7 +19,7 @@ body {
   header .logo img {
     width: 130px;
      height: 80px; /* ロゴのサイズ */
-    margin-left:30px;
+    margin-left:10px;
   }
   
   header nav ul {
@@ -59,9 +59,6 @@ body {
   }
   
   /* メインコンテンツ */
-  main {
-    margin: 0 auto;
-  }
   
   h1 {
     font-size: 2rem;
@@ -94,15 +91,6 @@ body {
   
 
   /* contact.html 用のスタイル */
-body.contact{
-    background-image: url('images/hiramatsu.jpeg'); /* 背景画像を指定 */
-    background-size: cover; /* 画面全体に画像を拡大 */
-    background-position: center; /* 画像を中央に配置 */
-    background-repeat: no-repeat; /* 画像を繰り返さない */
-    position: relative;
-    background-color: #f4f4f4;
-}
-
 body.contact-page::before {
     content: '';
     position: absolute;
@@ -148,5 +136,67 @@ body.contact-page::before {
     text-decoration: underline;
 }
 
+#news {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff; /* 必要に応じて背景色を設定 */
+  border-radius: 10px; /* 角を丸くする */
+  margin: 20px auto;
+  max-width: 800px; /* セクションの最大幅を設定 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+}
 
+#news h1 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
 
+#news p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#news ul {
+  list-style: none;
+  padding: 0;
+}
+
+#news ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  header {
+      display: flex;
+      /* ヘッダー全体を縦並びに */
+      align-items: center;
+      padding: 10px;
+  }
+
+  nav ul {
+      display: flex; /* メニューを横並びに */
+      flex-wrap: wrap; /* 必要に応じて折り返し */
+      justify-content: center; /* メニューを中央揃え */
+      padding: 0;
+      margin: 0;
+      list-style: none; /* リストのスタイルを削除 */
+  }
+
+  nav ul li {
+      margin: 0 10px; /* 各メニュー項目の間隔を調整 */
+  }
+
+  nav ul li a {
+      font-size: 10px; /* フォントサイズを調整 */
+      color: #003366;
+      text-decoration: none;
+  }
+
+  nav ul li a:hover {
+      text-decoration: underline; /* ホバー時の装飾 */
+  }
+}
