@@ -94,7 +94,7 @@ body {
   
 
   /* contact.html 用のスタイル */
-body.contact-page {
+body.contact{
     background-image: url('images/hiramatsu.jpeg'); /* 背景画像を指定 */
     background-size: cover; /* 画面全体に画像を拡大 */
     background-position: center; /* 画像を中央に配置 */

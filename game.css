@@ -17,14 +17,16 @@ header {
 
 h1 {
     padding-left: 80px;
-    padding-top:40px
+    padding-top: 40px; /* セミコロンを追加 */
     font-size: 2rem;
+    color: #003366;
 }
 
 h2 {
     padding-left: 80px;
-    padding-top:40px
+    padding-top: 40px; /* セミコロンを追加 */
     font-size: 2rem;
+    color: #003366; /* ネイビー */
 }
 
 /* 試合セクション */
@@ -90,7 +92,7 @@ h2 {
 
 .scoreassist {
     font-size: 0.8rem;
-    color: #666;
+    color: #003366;
     margin-top: 10px;
 
 }

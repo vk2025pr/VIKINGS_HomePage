@@ -58,22 +58,48 @@ body {
     object-fit: cover;
   }
 
+
+  h2{
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; 
+    padding-top:20px;
+    font-style: italic; /* イタリック体を指定 */
+   
+  }
+
+  .new-member {
+      /* 赤い枠 */
+    position: relative; /* 相対位置にしてNEWバッジを配置 */
+  }
+  
+  .new-member .new-badge {
+    position: absolute;
+    top: 10px;  /* 左上に配置 */
+    left: 10px;
+    background-color: red;  /* バッジの背景色 */
+    color: white;  /* バッジの文字色 */
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 15px; /* 角を丸く */
+  }
+
+
 /* メンバーリスト */
 .member-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 40px;
-    justify-items: center;
-    padding-left:80px;
-    padding-right:80px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 1行に5列を設定 */
+  gap: 15px; /* カード間の間隔 */
+  justify-items: center; /* 各カードを中央揃え */
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
   
   .member-card {
     background-color: white;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 0px;
+    border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     text-align: center;
@@ -81,8 +107,8 @@ body {
   
   .member-card img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: auto; /* 高さを150pxに固定 */
+    border-radius: 8px;
   }
   
   .member-info {
@@ -93,23 +119,53 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: #003366;
+    margin: 5px 0; /* 上下の余白を5pxに設定 */
   }
   
   .position {
     font-size: 1.2rem;
     color: #666;
+    margin:0px; /* 上下の余白を5pxに設定 */
 
   .career {
     font-size: 1.2rem;
     color: #666;
+    margin: 5px 0; /* 上下の余白を5pxに設定 */
 
   }
 
 
-  .member-card-newmember {
-    border: 3px solid red;  /* 赤い枠 */
-    position: relative;
-}
+
+  .captain-member .captain-badge{
+    position: absolute;
+    top: 10px;  /* 左上に配置 */
+    left: 10px;
+    background-color: #FFC800;  /* バッジの背景色 */
+    color: white;  /* バッジの文字色 */
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 15px; /* 角を丸く */
+  }
+
+  @media (max-width: 1200px) {
+    .member-list {
+      grid-template-columns: repeat(3, 1fr); /* 画面幅が小さくなったら3列 */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .member-list {
+      grid-template-columns: repeat(2, 1fr); /* 画面幅がさらに小さくなったら2列 */
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .member-list {
+      grid-template-columns: 1fr; /* モバイルでは1列 */
+    }
+  }
+
+
 
 
 
