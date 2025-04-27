@@ -213,6 +213,14 @@ h2 {
     border: 2px solid white;
     border-radius: 8px;
   }
+
+  @media (max-width: 768px) {
+    .modal-content {
+        margin: auto; /* スマホでも中央揃え */
+        max-width: 95%; /* スマホ画面に収まるように調整 */
+        max-height: 95%; /* スマホ画面に収まるように調整 */
+    }
+}
   
   .close {
     position: absolute;
