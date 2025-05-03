@@ -130,6 +130,8 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     text-align: center;
+    border: 2px solid navy; /* 紺色の枠線を追加 */
+    border-radius: 10px; 
   }
   
   .member-card img {
