@@ -42,6 +42,9 @@ main {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 180px;
     margin-bottom: 20px;
+    text-decoration: none; /* リンクの下線を削除 */
+    color: inherit; /* テキストの色を継承 */
+    display: inline-block; /* ブロック要素として扱う */
 }
 
 /* ロゴ画像のスタイル */
