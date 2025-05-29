@@ -59,11 +59,11 @@ body {
     margin-right: 8px; /* アイコンとテキストの間にスペースを追加 */
     font-size: 1.5rem; /* アイコンのサイズを調整 */
   }
-  
+
   header nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     padding: 0;
     margin: 0;
   }
@@ -195,5 +195,13 @@ body {
   }
   
 
-
+  footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+  }
 

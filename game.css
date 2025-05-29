@@ -63,7 +63,7 @@ body {
   header nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     padding: 0;
     margin: 0;
   }
@@ -84,13 +84,52 @@ body {
 .year{
     padding-left:80px ;
 }
-/* 試合セクション */
-.schedule {
-    margin-bottom: 5px;
-    padding: 10px 80px;
+
+.match-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .match-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .match-details-right {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-}
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .match-wrapper {
+      flex-direction: column;
+    }
+  
+    .match-info,
+    .match-details-right {
+      max-width: 100%;
+    }
+  }
+/* 試合セクション */
+.schedule-container {
+    display: flex; /* 横並びに配置 */
+    flex-wrap: wrap; /* 要素が画面幅を超えた場合に折り返す */
+    gap: 10px; 
+    padding-left:50px;/* 各要素間のスペース *//* 要素間のスペースを均等に配置 */
+  }
+  
+  .schedule {
+    height: 600px; 
+    flex: 0 0 calc(50% - 20px); /* 横幅を親要素の50%に設定し、間隔を考慮 */
+    box-sizing: border-box; /* パディングやボーダーを含めたサイズ計算 */
+  }
 
 /* 各試合のスタイル */
 .match-info {
@@ -134,7 +173,7 @@ body {
 .resultw {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #00ff99;
+    color: #72C6EF;
     margin-top: 10px;
 }
 
@@ -153,7 +192,7 @@ body {
 }
 
 .scoreassist {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #ffffff;
     margin-top: 15px;
 }
@@ -322,3 +361,13 @@ body {
         margin-bottom: 20px;
     }
 }
+
+footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+  }

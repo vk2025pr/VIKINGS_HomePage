@@ -64,7 +64,7 @@ body {
  header nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     padding: 0;
     margin: 0;
   }
