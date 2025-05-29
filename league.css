@@ -1,101 +1,199 @@
-/* 全体の基本スタイル */
+ /* ベーススタイル */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* ヘッダーのスタイル */
-header {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-main {
-    padding-left:80px;
-    padding-right:80px;
-    padding-top:20px;
-}
-
-/* チーム紹介セクション */
-.team-section {
+    background-color: #cdd8e7;
+  }
+  
+  /* ヘッダー */
+  header {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    padding-left:80px;
-    padding-right:80px;
-    padding-top: 5px;
-    gap: 15px;
-}
+    background-color: #001f3f;
+    color: white;
+    padding: 10px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  header .logo img {
+    width: 130px;
+    height: 80px;
+  }
+  
+  .sns-links {
+    display: flex; /* 横並びに配置 */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 40px; /* 各リンク間のスペース */
+    list-style: none; /* liのデフォルトのスタイルを削除 */
+    padding: 0; /* パディングを削除 */
+    margin: 20px 0; /* 上下に余白を追加 */
+  }
+  
+  .sns-links ul {
+    font-family: "Impact";
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sns-links a {
+    font-family: "Impact";
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+  
+  .sns-links a:hover {
+    color: #ffcc00; /* ホバー時の色 */
+  }
+  
+  .sns-links i {
+    margin-right: 8px; /* アイコンとテキストの間にスペースを追加 */
+    font-size: 1.5rem; /* アイコンのサイズを調整 */
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ffcc00;
+  }
 
-/* 各チームのスタイル */
-.team {
+  main {
+    padding: 40px 80px;
+    color: white;
+    background-color: #032c63;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  main h1 {
+    color: #ffcc00;
     text-align: center;
-    background-color: white;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  main p {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  /* チーム紹介セクション */
+  .team-section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 80px;
+  }
+  
+  /* 各チームのスタイル */
+  .team {
+    background-color: #032c63;
     padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: white;
+  }
+  
+  .team:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* ロゴ画像のスタイル */
+  .team-logo {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 180px;
-    margin-bottom: 20px;
-    text-decoration: none; /* リンクの下線を削除 */
-    color: inherit; /* テキストの色を継承 */
-    display: inline-block; /* ブロック要素として扱う */
-}
-
-/* ロゴ画像のスタイル */
-.team-logo {
-    width: 150px; /* ロゴの幅を150pxに設定 */
-    height: 150px; /* ロゴの高さを100pxに設定 */
-    margin-bottom: 5px;
-}
-
-/* チーム名のスタイル */
-.team-name {
+  }
+  
+  /* チーム名のスタイル */
+  .team-name,
+  .team-name-small {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-top: 0px 
-    color: #003366; /* ネイビー */
-}
-
-
-
-.team-name-small {
-    font-size: 1.0rem;
-    font-weight: bold;
-    margin-top: 0px
-    color: #003366; /* ネイビー */
-}
-
-@media (max-width: 768px) {
+    color: #ffcc00;
+  }
+  
+  .team-name-small {
+    font-size: 1rem;
+  }
+  
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 1024px) {
+    .team-section {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
     main {
-        display: flex; /* フレックスボックスを使用 */
-        flex-direction: column; /* 縦並びに */
-        justify-content: center; /* 垂直方向に中央揃え */
-        align-items: center; /* 水平方向に中央揃え */
-        text-align: center; /* テキストを中央揃え */
-        padding: 10px; /* 内側の余白を調整 */
-        margin: 0 auto; /* 外側の余白を中央揃え */
-        width: 100%; /* 幅を画面全体に合わせる */
-        max-width: 600px; /* 必要に応じて最大幅を設定 */
+      padding: 20px;
     }
-
+  
+    .team-section {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px;
+    }
+  
+    .team-logo {
+      max-width: 100px;
+    }
+  
     main h1 {
-        font-size: 1.5rem; /* 見出しのフォントサイズを調整 */
-        margin-bottom: 10px;
+      font-size: 1.5rem;
     }
-
+  
     main p {
-        font-size: 1rem; 
-        word-wrap: break-word; /* 長い単語を折り返す */
-        overflow-wrap: break-word; /* 段落のフォントサイズを調整 */
-        line-height: 1.5; /* 行間を調整 */
+      font-size: 0.95rem;
     }
-}
+  }
+  
+   footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+  }
+  
 
 
 

@@ -1,58 +1,116 @@
-/* 基本的なスタイル */
+/* ベーススタイル */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Oswald', 'Impact', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* ヘッダー */
-header {
-    
+    background-color: #cdd8e7;
+  }
+  
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001f3f;
     color: white;
-    text-align: center;
-    padding: 1rem;
-}
+    padding: 10px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  header .logo img {
+    width: 130px;
+    height: 80px;
+  }
 
-h1 {
-    padding-left: 80px;
-    padding-top: 40px; /* セミコロンを追加 */
-    font-size: 2rem;
-    color: #003366;
-}
+  .sns-links {
+    display: flex; /* 横並びに配置 */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 40px; /* 各リンク間のスペース */
+    list-style: none; /* liのデフォルトのスタイルを削除 */
+    padding: 0; /* パディングを削除 */
+    margin: 20px 0; /* 上下に余白を追加 */
+  }
+  
+  .sns-links ul {
+    font-family: "Impact";
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sns-links a {
+    font-family: "Impact";
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+  
+  .sns-links a:hover {
+    color: #ffcc00; /* ホバー時の色 */
+  }
+  
+  .sns-links i {
+    margin-right: 8px; /* アイコンとテキストの間にスペースを追加 */
+    font-size: 1.5rem; /* アイコンのサイズを調整 */
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ffcc00;
+  }
 
-h2 {
-    padding-left: 80px;
-    padding-top: 40px; /* セミコロンを追加 */
-    font-size: 2rem;
-    color: #003366; /* ネイビー */
+.year{
+    padding-left:80px ;
 }
-
 /* 試合セクション */
 .schedule {
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top:40px
+    margin-bottom: 5px;
+    padding: 10px 80px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
-
-
 
 /* 各試合のスタイル */
 .match-info {
-    background-color: white;
-    padding-left: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #001f3f, #003366);
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.match-info:hover {
+    transform: translateY(-5px);
 }
 
 .team-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
 .team-logo {
@@ -61,112 +119,103 @@ h2 {
 }
 
 .team-info p {
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    color: #ffcc00;
 }
 
 /* 試合の日付と結果 */
 .date {
     font-size: 1rem;
-    color: #666;
-    margin-top: 10px;
+    color: #ffffff;
+    margin-top: 5px;
 }
 
 .resultw {
-    font-size: 1.3rem;
-    color: #0067C0; /* 結果の色を青に */
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00ff99;
     margin-top: 10px;
 }
 
 .resultl {
-    font-size: 1.3rem;
-    color: #e74c3c; /* 結果の色を赤に */
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff6666;
     margin-top: 10px;
 }
 
 .resultd {
-    font-size: 1.3rem;
-    color: #005133 /* 結果の色を赤に */
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffff66;
     margin-top: 10px;
 }
 
 .scoreassist {
-    font-size: 0.8rem;
-    color: #003366;
-    margin-top: 10px;
-
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-top: 15px;
 }
-
-
-
-
 
 /* 横並びにする */
-.infomation-all, .match-result-sheet {
-    display: inline-block; /* 横並びにする */
-    vertical-align: top; /* 上揃え */
-    width: 48%; /* 各要素の幅を調整 */
-    margin-right: 2%; /* 間隔を設定 */
-}
-
-.infomation-all, .scoreassist {
-    display: inline-block; /* 横並びにする */
-    vertical-align: top; /* 上揃え */
-    
-}
-
-
+.infomation-all,
 .match-result-sheet {
-    margin-right: 20px; /* 最後の要素の右余白を削除 */
-}
+    margin-left: auto;
+  }
 
 /* 表のスタイル */
 .match-result-sheet table {
-    width: 100%; /* 表を親要素の幅に合わせる */
-    border-collapse: collapse; /* 枠線を統一 */
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 10px;
+    background-color: white;
+    color: #003366;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.match-result-sheet th, .match-result-sheet td {
-    border: 1px solid #ccc; /* セルの枠線 */
-    padding: 8px; /* セル内の余白 */
-    text-align: center; /* テキストを中央揃え */
+.match-result-sheet th,
+.match-result-sheet td {
+    border: 1px solid #001f3f;
+    padding: 10px;
+    text-align: center;
 }
 
 .match-result-sheet th {
-    background-color: #f4f4f4; /* ヘッダーの背景色 */
-    font-weight: bold; /* ヘッダーの文字を太字に */
+    background-color: #004488;
+    color: white;
+    font-weight: bold;
 }
 
+.match-result-sheet tr:nth-child(2) td {
+    background-color: #d1ecf1;
+}
 
-/* フォトギャラリーのスタイル */
+.match-result-sheet td:last-child {
+    background-color: #ffe066;
+    font-weight: bold;
+}
+
+/* フォトギャラリー */
 .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 1行に4枚表示 */
-    gap: 15px; /* 写真間の間隔 */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
     margin-top: 20px;
-    margin-right:20px; /* 表との間隔 */
-}
-
-.photo-gallery a {
-    display: block;
-    overflow: hidden;
-    border-radius: 8px; /* 角を丸くする */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-gallery a:hover {
-    transform: scale(1.05); /* ホバー時に拡大 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
 }
 
 .photo-gallery img {
-    width: 100%; /* 親要素に合わせて幅を調整 */
-    height: auto; /* アスペクト比を維持 */
-    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
 
 /* フォトギャラリーを非表示にするクラス */
 .hidden {
@@ -174,55 +223,48 @@ h2 {
 }
 
 /* ボタンのスタイル */
-#toggle-gallery {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #003366;
-    color: #666; 
+.toggle-gallery {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #ffcc00;
+    color: #003366;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
-    font-family: Arial,sans-serif;
+    transition: all 0.3s ease;
 }
 
-#toggle-gallery:hover {
-    background-color: #0055aa;
+.toggle-gallery:hover {
+    background-color: #ffe066;
+    transform: scale(1.05);
 }
 
+/* モーダル */
 .modal {
-    display: none; /* 初期状態では非表示 */
+    display: none;
     position: fixed;
-    z-index: 1000; /* 他の要素より前面に表示 */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* スクロール可能にする */
-    background-color: rgba(0, 0, 0, 0.8); /* 背景を半透明の黒にする */
-  }
-  
-  .modal-content {
-    margin-top:100px;
-    margin-left:230px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: 100px auto;
     display: block;
-    max-width: 80%; /* モーダル内の画像の最大幅 */
-    max-height: 80%; /* モーダル内の画像の最大高さ */
+    max-width: 80%;
+    max-height: 80%;
     border: 2px solid white;
     border-radius: 8px;
-  }
-
-  @media (max-width: 768px) {
-    .modal-content {
-        margin: auto; /* スマホでも中央揃え */
-        max-width: 95%; /* スマホ画面に収まるように調整 */
-        max-height: 95%; /* スマホ画面に収まるように調整 */
-    }
 }
-  
-  .close {
+
+.close {
     position: absolute;
     top: 20px;
     right: 35px;
@@ -230,49 +272,38 @@ h2 {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover {
     color: #bbb;
-    text-decoration: none;
-  }
+}
 
-
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
     .schedule {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 20px;
     }
 
     .match-info {
-        padding: 10px;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        padding: 15px;
     }
 
     .team-info {
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
     }
 
     .team-logo {
         width: 60px;
-        height: auto;
     }
 
     .team-info p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .photo-gallery {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    #toggle-gallery {
-        font-size: 0.9rem;
-        padding: 8px 16px;
     }
 
     .modal-content {
@@ -282,5 +313,12 @@ h2 {
 
     .close {
         font-size: 30px;
+    }
+
+    .infomation-all, .match-result-sheet {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }

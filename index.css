@@ -1,0 +1,273 @@
+/* ベーススタイル */
+body {
+  font-family: 'Oswald', 'Impact', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #cdd8e7;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001f3f;
+  color: white;
+  padding: 10px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* --- SNSリンクここまで --- */
+
+header .logo img {
+  width: 130px;
+  height: 80px;
+}
+
+.sns-links {
+  display: flex; /* 横並びに配置 */
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 40px; /* 各リンク間のスペース */
+  list-style: none; /* liのデフォルトのスタイルを削除 */
+  padding: 0; /* パディングを削除 */
+  margin: 20px 0; /* 上下に余白を追加 */
+}
+
+.sns-links ul {
+  font-family: "Impact";
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.sns-links a {
+  font-family: "Impact";
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  transition: color 0.3s;
+}
+
+.sns-links a:hover {
+  color: #ffcc00; /* ホバー時の色 */
+}
+
+.sns-links i {
+  margin-right: 8px; /* アイコンとテキストの間にスペースを追加 */
+  font-size: 1.5rem; /* アイコンのサイズを調整 */
+}
+
+header nav ul {
+  font-family: "Impact";
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li a {
+  font-family: "Impact";
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* メインビジュアル */
+.main-visual {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* メインコンテンツ */
+h1 {
+  font-size: 2rem;
+  color: #ffcc00;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+#news {
+  text-align: center;
+  padding: 20px;
+  background-color: #032c63;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+#news h1 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+#news p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#news ul li {
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .social-links {
+    margin: 10px 0;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    color: #ffcc00;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* 情報グリッドの2カラムレイアウト */
+.info-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 共通ボックスデザイン */
+.news-box,
+.contact-box,
+.schedule-box,
+.standings-box {
+  background-color: #032c63;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.news-box h2,
+.contact-box h2,
+.schedule-box h2,
+.standings-box h2 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.info-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-grid ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.info-grid ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.info-grid ul li a:hover {
+  text-decoration: underline;
+}
+
+.schedule-box p,
+.standings-box p {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: static;
+  width: 100%;
+  bottom: 0;
+}
+
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: static;
+  width: 100%;
+  bottom: 0;
+}

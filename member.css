@@ -1,197 +1,194 @@
 /* ベーススタイル */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  /* ヘッダー */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #003366; /* ネイビー */
-    color: white;
-    padding: 0px 40px;
-  }
-  
-  header .logo img {
-    width: 130px;
-     height: 80px; /* ロゴのサイズ */
-    margin-left:30px;
-  }
-  
-  header nav ul {
-    list-style-type: none;
-    margin-right: 80px;
-    padding: 0;
-    display: flex;
-  }
-  
-  header nav ul li {
-    margin-left: 60px;
-    font-size: 20px;
-  }
-  
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-style: italic;
-  }
-  
-  header nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* メインビジュアル */
-  .main-visual {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .main-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  font-family: 'Oswald', 'Impact', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #cdd8e7;
+}
 
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001f3f;
+  color: white;
+  padding: 10px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-  h2{
-    display: flex; /* フレックスボックスを使用 */
-    justify-content: center; 
-    padding-top:20px;
-    font-style: italic; /* イタリック体を指定 */
-   
-  }
+header .logo img {
+  width: 130px;
+  height: 80px;
+}
 
-  .new-member {
-      /* 赤い枠 */
-    position: relative; /* 相対位置にしてNEWバッジを配置 */
-  }
-  
-  .new-member .new-badge {
-    position: absolute;
-    top: 10px;  /* 左上に配置 */
-    left: 10px;
-    background-color: red;  /* バッジの背景色 */
-    color: white;  /* バッジの文字色 */
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 15px; /* 角を丸く */
-  }
+.sns-links {
+  display: flex; /* 横並びに配置 */
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 40px; /* 各リンク間のスペース */
+  list-style: none; /* liのデフォルトのスタイルを削除 */
+  padding: 0; /* パディングを削除 */
+  margin: 20px 0; /* 上下に余白を追加 */
+}
 
+.sns-links ul {
+  font-family: "Impact";
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
 
-/* メンバーリスト */
+.sns-links a {
+  font-family: "Impact";
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  transition: color 0.3s;
+}
+
+.sns-links a:hover {
+  color: #ffcc00; /* ホバー時の色 */
+}
+
+.sns-links i {
+  margin-right: 8px; /* アイコンとテキストの間にスペースを追加 */
+  font-size: 1.5rem; /* アイコンのサイズを調整 */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffcc00;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  font-style: italic;
+  color: #002147;
+}
+
 .member-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 1行に5列を設定 */
-  gap: 15px; /* カード間の間隔 */
-  justify-items: center; /* 各カードを中央揃え */
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 80px;
+  justify-content: flex-start;
 }
 
-/* スマホ版のレイアウト調整 */
-@media screen and (max-width: 600px) {
+.member-card {
+  background-color: #032c63;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.3s;
+  color: white;
+  width: 305px;
+  flex: 0 0 auto;
+  position: relative; 
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+.member-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid #ffcc00;
+}
+
+.member-info {
+  padding: 15px;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 5px;
+}
+
+.position {
+  font-size: 1.2rem;
+  color: #ffff;
+  margin-bottom: 5px;
+}
+
+.career {
+  font-size: 1rem;
+  color: #ffff;
+  line-height: 1.5;
+}
+
+.member-card .new-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff4136;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  z-index: 1;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
   .member-list {
-      display: grid;
-      grid-template-columns: 1fr; /* 1列で表示 */
-      gap: 10px;
-      padding-left: 10px;  /* 横の余白を減らす */
-      padding-right: 10px;
+    justify-content: center;
+    padding: 20px;
   }
-  
+
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
   .member-card {
-      width: 100%; /* 各カードの横幅を100%に */
-      box-sizing: border-box; /* パディングを含むように調整 */
+    margin-bottom: 20px;
   }
-  
-  /* 画像サイズを調整（必要に応じて） */
-  .member-card img {
-      width: 100%; /* 画像が親要素に合わせて伸縮 */
-      height: auto; /* 縦横比を維持 */
-  }
-  
-  /* メンバー情報を中央揃え */
+
   .member-info {
-      text-align: center;
+    padding: 10px;
+    font-weight: bold;
   }
-}
-  
-  .member-card {
-    background-color: white;
-    padding: 0px;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    text-align: center;
-    border: 2px solid navy; /* 紺色の枠線を追加 */
-    border-radius: 10px; 
-  }
-  
-  .member-card img {
-    width: 100%;
-    height: auto; /* 高さを150pxに固定 */
-    border-radius: 8px;
-  }
-  
-  .member-info {
-    margin-top: 10px;
-  }
-  
+
   .name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #003366;
-    margin: 5px 0; /* 上下の余白を5pxに設定 */
-  }
-  
-  .position {
     font-size: 1.2rem;
-    color: #666;
-    margin:0px; /* 上下の余白を5pxに設定 */
-
-  .career {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 5px 0; /* 上下の余白を5pxに設定 */
-
-  }
-
-
-  .captain-member .captain-badge{
-    position: absolute;
-    top: 10px;  /* 左上に配置 */
-    left: 10px;
-    background-color: #FFC800;  /* バッジの背景色 */
-    color: white;  /* バッジの文字色 */
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 15px; /* 角を丸く */
-  }
-
- 
-
-
-
-
-
-
-
-
-  footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
   }
 }
-  
+
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: static;
+  width: 100%;
+  bottom: 0;
+}
