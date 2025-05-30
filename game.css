@@ -119,7 +119,7 @@ body {
     height: 600px; 
     flex: 0 0 calc(50% - 20px); /* 横幅を親要素の50%に設定し、間隔を考慮 */
     box-sizing: border-box; 
-    margin-bottom: 60px/* パディングやボーダーを含めたサイズ計算 */
+    margin-bottom: 15px/* パディングやボーダーを含めたサイズ計算 */
   }
 
 /* 各試合のスタイル */
@@ -183,7 +183,8 @@ body {
 }
 
 .scoreassist {
-    font-size: 0.8rem;
+    font-weight: bold;
+    font-size: 0.7rem;
     color: #ffffff;
     margin-top: 15px;
 }
@@ -347,28 +348,11 @@ body {
       flex-direction: column;
       align-items: flex-start;
     }
-  
-    .schedule-container {
-      padding: 10px;
-      margin:auto;
-    }
-
-    .schedule{
-        margin-bottom:40px;
-    }
-  
-    .team-info {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .logo {
-      display: block;
-    }
-  
-    .photo-gallery {
-      grid-template-columns: repeat(2, 1fr);
+    
+    .schedule-container{
+        padding-left: 7px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .logo{
