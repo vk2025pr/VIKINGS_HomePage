@@ -251,8 +251,7 @@ footer {
       top: 60px;
       right: 0px; /* 画面右から少し内側に */
       background-color: #001f3f;
-      width: auto;              /* 必要最小限の幅に */
-      min-width: 100px;         /* 最小幅を指定（必要に応じて調整） */
+      width: 100px;              /* 必要最小限の幅に */        /* 最小幅を指定（必要に応じて調整） */
       padding: 10px 0;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

@@ -54,11 +54,11 @@
   <html lang="ja">
   
    <div class="year">
-    <h1>2025</h1>
+    <center><h1>2025 SEASON</h1></center>
    </div>
       
    <div class="year">
-    <h1>2024</h1>
+    <center><h1>2024 SEASON</h1></center>
    </div>
   
    <div class="schedule-container">
@@ -116,8 +116,8 @@
           </div>
   
           <div class="photo-gallery-container">
-            <button class="toggle-gallery" data-target="gallery2">Photo Gallery </button>
-            <div class="photo-gallery hidden" id="gallery2">
+            <button class="toggle-gallery" data-target="gallery1">Photo Gallery </button>
+            <div class="photo-gallery hidden" id="gallery1">
               <img src="images/IMG_2046.JPG" alt="Photo 1" class="gallery-image">
                 <img src="images/IMG_2046.JPG" alt="Photo 2" class="gallery-image">
                 <img src="images/IMG_2046.JPG" alt="Photo 3" class="gallery-image">
@@ -778,7 +778,10 @@
   
 
 
-
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image" alt="modal">
+  </div>
 
 
 
@@ -849,6 +852,7 @@ window.addEventListener('click', function (event) {
     nav.classList.toggle('active');
   }
 </script>
+
 
 
 </body>
