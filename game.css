@@ -107,16 +107,6 @@ body {
     gap: 20px;
   }
   
-  @media (max-width: 768px) {
-    .match-wrapper {
-      flex-direction: column;
-    }
-  
-    .match-info,
-    .match-details-right {
-      max-width: 100%;
-    }
-  }
 /* 試合セクション */
 .schedule-container {
     display: flex; /* 横並びに配置 */
@@ -128,7 +118,8 @@ body {
   .schedule {
     height: 600px; 
     flex: 0 0 calc(50% - 20px); /* 横幅を親要素の50%に設定し、間隔を考慮 */
-    box-sizing: border-box; /* パディングやボーダーを含めたサイズ計算 */
+    box-sizing: border-box; 
+    margin-bottom: 60px/* パディングやボーダーを含めたサイズ計算 */
   }
 
 /* 各試合のスタイル */
@@ -317,50 +308,155 @@ body {
     color: #bbb;
 }
 
+/* ハンバーガー初期非表示 */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-    .schedule {
-        padding: 20px;
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+    }
+  
+    #main-nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background-color: #001f3f;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  
+    #main-nav.active {
+      display: block;
+    }
+  
+    #main-nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .schedule-container {
+      padding: 10px;
+      margin:auto;
     }
 
-    .match-info {
-        font-size: 0.95rem;
-        padding: 15px;
+    .schedule{
+        margin-bottom:40px;
     }
-
+  
     .team-info {
-        flex-direction: column;
-        align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-
-    .team-logo {
-        width: 60px;
+  
+    .logo {
+      display: block;
     }
-
-    .team-info p {
-        font-size: 1.2rem;
-    }
-
+  
     .photo-gallery {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    .modal-content {
-        max-width: 90%;
-        max-height: 90%;
-    }
-
-    .close {
-        font-size: 30px;
-    }
-
-    .infomation-all, .match-result-sheet {
-        display: block;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-}
+    .logo{
+        display: none;
+      }
+      
+      .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* ← 変更 */
+        background-color: #001f3f;
+        padding: 10px 0;
+        position: relative;
+      }
+        
+        .sns-links a {
+          display: flex;
+          align-items: center;
+        }
+      
+      
+        .sns-links a::after {
+          content: "";
+          display: none;
+        }
+      
+        /* aタグ内のテキストを非表示にする方法（安全な方法） */
+        .sns-links a {
+          font-size: 0;
+        }
+      
+        .sns-links a i {
+          font-size: 1.5rem; /* アイコンのサイズは維持 */
+        }
+      
+        .menu-toggle {
+          display: block;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          z-index: 1001;
+        }
+      
+        #main-nav {
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0px; /* 画面右から少し内側に */
+          background-color: #001f3f;
+          width: auto;              /* 必要最小限の幅に */
+          min-width: 100px;         /* 最小幅を指定（必要に応じて調整） */
+          padding: 10px 0;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          z-index: 1000;
+        }
+      
+        #main-nav.active {
+          display: block;
+        }
+      
+        #main-nav ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* 左寄せ（右寄せしたければflex-end） */
+          gap: 0;
+          margin: 0;
+          padding: 0;
+        }
+      
+        #main-nav ul li {
+          width: 100%;
+        }
+      
+        #main-nav ul li a {
+          display: block;
+          padding: 0px 20px;
+          font-size: 1rem;
+          color: white;
+          text-decoration: none;
+          font-family: 'Impact', sans-serif;
+          white-space: nowrap; /* 折り返さない */
+        }
+      
+        #main-nav ul li a:hover {
+          background-color: #004080;
+        }
+  }
 
 footer {
     background-color: #001f3f;

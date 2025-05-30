@@ -23,6 +23,9 @@
       <img src="images/vikings_logo_black.PNG" alt="VKINGS Lacrosse Club">
     </div>
 
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     <div class="sns-links">
       <ul>
       <li><a href="https://www.instagram.com/vikings_lacrosse" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
@@ -30,7 +33,7 @@
       <li><a href="https://www.facebook.com/vikingslax" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li></ul>
       </div>
 
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">TOP</a></li>
         <li><a href="member.html">MEMBER</a></li>
@@ -679,5 +682,15 @@
   <footer>
     <p>&copy; 2025 VIKINGS Lacrosse Club</p>
   </footer>
+　
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+
 </body>
 </html>

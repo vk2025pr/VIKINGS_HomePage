@@ -19,27 +19,33 @@
 <body>
   <!-- ヘッダー -->
   <header>
+    
     <div class="logo">
       <img src="images/vikings_logo_black.PNG" alt="VKINGS Lacrosse Club">
     </div>
+  
+    
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
     <div class="sns-links">
-      <ul>
-      <li><a href="https://www.instagram.com/vikings_lacrosse" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://www.youtube.com/@VIKINGSLacrosseClub" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
-      <li><a href="https://www.facebook.com/vikingslax" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li></ul>
-      </div>
+    <ul>
+    <li><a href="https://www.instagram.com/vikings_lacrosse" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="https://www.youtube.com/@VIKINGSLacrosseClub" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+    <li><a href="https://www.facebook.com/vikingslax" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li></ul>
+    </div>
 
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">TOP</a></li>
         <li><a href="member.html">MEMBER</a></li>
         <li><a href="game.html">GAME</a></li>
         <li><a href="league.html">LEAGUE</a></li>
-  
+      
       </ul>
     </nav>
   </header>
+
   
  
 
@@ -835,7 +841,15 @@ window.addEventListener('click', function (event) {
         modal.style.display = 'none'; // モーダルを非表示
     }
 });
+
+
+
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    nav.classList.toggle('active');
+  }
 </script>
+
 
 </body>
 </html>

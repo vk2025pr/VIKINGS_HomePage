@@ -129,39 +129,6 @@ ul li {
 }
 
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .social-links {
-    margin: 10px 0;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul li {
-    margin: 0 10px;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
-    color: #ffcc00;
-    text-decoration: none;
-  }
-
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-}
-
 /* 情報グリッドの2カラムレイアウト */
 .info-grid {
   display: flex;
@@ -388,4 +355,107 @@ footer {
   position: static;
   width: 100%;
   bottom: 0;
+}
+
+/* ハンバーガー初期非表示 */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  font-size: 1.5rem; /* ← 明示的に指定 */
+}
+
+@media (max-width: 768px) {
+ 
+.logo{
+  display: none;
+}
+
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ← 変更 */
+  background-color: #001f3f;
+  padding: 10px 0;
+  position: relative;
+}
+  
+  .sns-links a {
+    display: flex;
+    align-items: center;
+  }
+
+
+  .sns-links a::after {
+    content: "";
+    display: none;
+  }
+
+  /* aタグ内のテキストを非表示にする方法（安全な方法） */
+  .sns-links a {
+    font-size: 0;
+  }
+
+  .sns-links a i {
+    font-size: 1.5rem; /* アイコンのサイズは維持 */
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  #main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0px; /* 画面右から少し内側に */
+    background-color: #001f3f;
+    width: auto;              /* 必要最小限の幅に */
+    min-width: 100px;         /* 最小幅を指定（必要に応じて調整） */
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  #main-nav.active {
+    display: block;
+  }
+
+  #main-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 左寄せ（右寄せしたければflex-end） */
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-nav ul li {
+    width: 100%;
+  }
+
+  #main-nav ul li a {
+    display: block;
+    padding: 0px 20px;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Impact', sans-serif;
+    white-space: nowrap; /* 折り返さない */
+  }
+
+  #main-nav ul li a:hover {
+    background-color: #004080;
+  }
 }

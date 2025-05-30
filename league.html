@@ -19,27 +19,33 @@
 <body>
   <!-- ヘッダー -->
   <header>
+    
     <div class="logo">
       <img src="images/vikings_logo_black.PNG" alt="VKINGS Lacrosse Club">
     </div>
+  
+    
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
     <div class="sns-links">
-      <ul>
-      <li><a href="https://www.instagram.com/vikings_lacrosse" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://www.youtube.com/@VIKINGSLacrosseClub" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
-      <li><a href="https://www.facebook.com/vikingslax" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li></ul>
-      </div>
+    <ul>
+    <li><a href="https://www.instagram.com/vikings_lacrosse" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="https://www.youtube.com/@VIKINGSLacrosseClub" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+    <li><a href="https://www.facebook.com/vikingslax" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li></ul>
+    </div>
 
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="index.html">TOP</a></li>
         <li><a href="member.html">MEMBER</a></li>
         <li><a href="game.html">GAME</a></li>
         <li><a href="league.html">LEAGUE</a></li>
-       
+      
       </ul>
     </nav>
   </header>
+
   
  
 
@@ -47,7 +53,7 @@
   <main>
     <section id="league">
       <h1>Champions League Division 1</h1>
-      <p>2周にわたる総当たり戦と終盤のプレーオフを勝ち抜いた上位2チームが全国クラブ選手権に駒を進めます。<br>全国大会を勝ち上がると、学生王者と真の日本一をかけて戦うことができます。
+      <p>総当たり戦（2周）とプレーオフを勝ち抜いた2チームが全国クラブ選手権に進出します。<br>全国大会を勝ち上がると、学生王者と真の日本一をかけて戦うことができます。
       </p>
     </section>
   </main>
@@ -88,7 +94,7 @@
 <main>
   <section id="league">
     <h1>Champions League Division 2</h1>
-    <p>近年BONDSや鎌ヶ谷ラクロスクラブなど新チームも加わり、1部昇格を目指した熱い戦いが繰り広げられています。<br>昨シーズンは入れ替え戦トーナメントを勝ち抜いたVIKINGSが昇格を果たしました。
+    <p>近年勃興した新チームも加わり、1部昇格を目指した熱い戦いが繰り広げられています。<br>昨シーズンは入れ替え戦トーナメントを勝ち抜いた我々VIKINGSが昇格を果たしました。
     </p>
   </section>
 </main>
@@ -197,5 +203,13 @@
   <footer>
     <p>&copy; 2025 VIKINGS Lacrosse Club</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
