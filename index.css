@@ -334,7 +334,23 @@ ul li {
 .standings-box p {
   color: #ffffff;
   font-size: 1rem;
-  margin: 8px 0;
+  margin: 4px 0;
+}
+
+.schedule-info .ticket a {
+  display: inline-block;
+  margin-top: 2px;
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.schedule-info .ticket a:hover {
+  text-decoration: underline;
+}
+
+.schedule-info .ticket i {
+  margin-right: 2px;
 }
 
 footer {
@@ -372,6 +388,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+  .schedule-info .place {
+    font-size: 0.8rem;
+    color: #ffffff;
+  }
  
 .logo{
   display: none;
