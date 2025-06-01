@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://vikings-homepage-1.onrender.com/">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <title>バイキングスラクロスクラブ　VIKINGS Lacrosse Club </title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="game.css"> 
   <link rel="icon" href="images/vikings_logo_black.PNG" type="image/png">
 </head>
@@ -114,13 +114,13 @@
           <div class="photo-gallery-container">
             <button class="toggle-gallery" data-target="gallery1">Photo Gallery </button>
             <div class="photo-gallery hidden" id="gallery1">
-              <img src="images/IMG_2046.JPG" alt="Photo 1" class="gallery-image">
-                <img src="images/IMG_2046.JPG" alt="Photo 2" class="gallery-image">
-                <img src="images/IMG_2046.JPG" alt="Photo 3" class="gallery-image">
-                <img src="images/IMG_2046.JPG" alt="Photo 4" class="gallery-image">
-                <img src="images/IMG_2046.JPG" alt="Photo 5" class="gallery-image">
-                <img src="images/IMG_2046.JPG" alt="Photo 6" class="gallery-image">
-                <img src="images/IMG_2046.JPG" alt="Photo 7" class="gallery-image">
+                <img src="images/v1.jpg" alt="Photo 1" class="gallery-image">
+                <img src="images/v2.jpg" alt="Photo 2" class="gallery-image">
+                <img src="images/v3.jpg" alt="Photo 3" class="gallery-image">
+                <img src="images/v4.jpg" alt="Photo 4" class="gallery-image">
+                <img src="images/v5.jpg" alt="Photo 5" class="gallery-image">
+                <img src="images/v6.jpg" alt="Photo 6" class="gallery-image">
+                <img src="images/v7.jpg" alt="Photo 7" class="gallery-image">
                 <img src="images/IMG_2046.JPG" alt="Photo 8" class="gallery-image">
                 
         </div>
@@ -735,54 +735,31 @@
             
     </div>
   </div>
-　</div>　　　
+  </div>
 </section>
 </div>
 
 
+<div id="modal" class="modal">
+  <!-- （1）半透明の背景レイヤー。クリックで閉じる処理は JS でそのまま使える -->
+  <div class="modal-overlay"></div>
 
+  <!-- （2）「前へ」ボタン -->
+  <button id="prevBtn" class="modal-nav prev" aria-label="前の写真へ">
+    &#10094;
+  </button>
 
+  <!-- （3）モーダルで実際に表示する画像部分（<img> の src を JS で切り替え） -->
+  <img class="modal-content" id="modal-image" alt="modal">
 
+  <!-- （4）「次へ」ボタン -->
+  <button id="nextBtn" class="modal-nav next" aria-label="次の写真へ">
+    &#10095;
+  </button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  </body>
-  </html>
-  
-
-
-  <div id="modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-image" alt="modal">
-  </div>
-
-
-
-
-
+  <!-- （5）右上に表示する「×」ボタン（閉じる） -->
+  <span class="close">&times;</span>
+</div>
 
 
   <footer>
@@ -792,63 +769,102 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // ———————— (A) Photo Gallery の表示・非表示 ————————
       const buttons = document.querySelectorAll('.toggle-gallery');
-      
       buttons.forEach(button => {
-          button.addEventListener('click', function () {
-              const targetId = this.getAttribute('data-target');
-              const gallery = document.getElementById(targetId);
-              
-              if (gallery.classList.contains('hidden')) {
-                  gallery.classList.remove('hidden');
-                  this.textContent = 'close';
-              } else {
-                  gallery.classList.add('hidden');
-                  this.textContent = 'Photo Gallery ';
-              }
-          });
+        button.addEventListener('click', function () {
+          const targetId = this.getAttribute('data-target');
+          const gallery = document.getElementById(targetId);
+          if (gallery.classList.contains('hidden')) {
+            gallery.classList.remove('hidden');
+            this.textContent = 'close';
+          } else {
+            gallery.classList.add('hidden');
+            this.textContent = 'Photo Gallery';
+          }
+        });
       });
-  });
-  
-</script>
-
-<script>
-// モーダルの要素を取得
-const modal = document.getElementById('modal');
-const modalImage = document.getElementById('modal-image');
-const closeModal = document.querySelector('.close');
-
-// ギャラリー内の画像を取得
-const galleryImages = document.querySelectorAll('.gallery-image');
-
-// 各画像にクリックイベントを追加
-galleryImages.forEach(image => {
-    image.addEventListener('click', function () {
-        modal.style.display = 'block'; // モーダルを表示
-        modalImage.src = this.src; // クリックした画像をモーダルに表示
+    
+      // ———————— (B) モーダル関連 ————————
+      const modal = document.getElementById('modal');
+      const modalImage = document.getElementById('modal-image');
+      const closeModal = document.querySelector('#modal .close');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+    
+      // 「現在開いているギャラリー内の画像リスト」 と 「そのインデックス」を保持する
+      let currentImages = [];
+      let currentIndex = 0;
+    
+      // （1）各ギャラリーのサムネイル画像にクリックイベントを設定
+      //     .gallery-image はすべてのギャラリー画像サムネイルに付いているクラス
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      galleryImages.forEach(img => {
+        img.addEventListener('click', function () {
+          // 「this」はクリックされた <img class="gallery-image"> 要素
+          // parentNode（= <div class="photo-gallery" id="galleryX">） を参照して
+          // その中にある同じクラス .gallery-image をすべて取得し配列にする
+          const parentGallery = this.parentElement; 
+          currentImages = Array.from(parentGallery.querySelectorAll('.gallery-image'));
+    
+          // クリックしたサムネイルのインデックスを求める
+          currentIndex = currentImages.indexOf(this);
+    
+          // モーダルを開き、modalImage.src をクリックした画像にする
+          modal.style.display = 'block';
+          modalImage.src = this.src;
+        });
+      });
+    
+      // （2）閉じるボタンを押したときの処理
+      closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+    
+      // （3）背景（.modal-overlay）をクリックしたときもモーダルを閉じる
+      document.querySelector('.modal-overlay').addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+    
+      // （4）「次へ」ボタンをクリックした時
+      nextBtn.addEventListener('click', function () {
+        if (currentImages.length <= 1) return; // 画像が1枚だけなら何もしない
+        // インデックスを次へ。最後なら0に戻す（ループ）
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        modalImage.src = currentImages[currentIndex].src;
+      });
+    
+      // （5）「前へ」ボタンをクリックした時
+      prevBtn.addEventListener('click', function () {
+        if (currentImages.length <= 1) return;
+        // インデックスを前へ。0なら最後に飛ばす（ループ）
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        modalImage.src = currentImages[currentIndex].src;
+      });
+    
+      // （6）キーボードの ← / → キーで操作したい場合
+      document.addEventListener('keydown', function (event) {
+        if (modal.style.display === 'block') {
+          if (event.key === 'ArrowRight') {
+            // 次へ
+            nextBtn.click();
+          } else if (event.key === 'ArrowLeft') {
+            // 前へ
+            prevBtn.click();
+          } else if (event.key === 'Escape') {
+            // Esc キーでモーダルを閉じる
+            modal.style.display = 'none';
+          }
+        }
+      });
+    
+      // ———————— (C) ハンバーガーメニューの開閉 ————————
+      window.toggleMenu = function () {
+        const nav = document.getElementById('main-nav');
+        nav.classList.toggle('active');
+      };
     });
-});
-
-// モーダルを閉じる
-closeModal.addEventListener('click', function () {
-    modal.style.display = 'none'; // モーダルを非表示
-});
-
-// モーダル外をクリックして閉じる
-window.addEventListener('click', function (event) {
-    if (event.target === modal) {
-        modal.style.display = 'none'; // モーダルを非表示
-    }
-});
-
-
-
-  function toggleMenu() {
-    const nav = document.getElementById('main-nav');
-    nav.classList.toggle('active');
-  }
-</script>
-
+    </script>
 
 
 </body>

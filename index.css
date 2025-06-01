@@ -1,90 +1,4 @@
-/* ベーススタイル */
-body {
-  font-family: 'Oswald', 'Impact', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #cdd8e7;
-}
 
-/* ヘッダー */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #001f3f;
-  color: white;
-  padding: 10px 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-/* --- SNSリンクここまで --- */
-
-header .logo img {
-  width: 130px;
-  height: 80px;
-}
-
-.sns-links {
-  display: flex; /* 横並びに配置 */
-  justify-content: center; /* 中央揃え */
-  align-items: center; /* 垂直方向の中央揃え */
-  gap: 40px; /* 各リンク間のスペース */
-  list-style: none; /* liのデフォルトのスタイルを削除 */
-  padding: 0; /* パディングを削除 */
-  margin: 20px 0; /* 上下に余白を追加 */
-}
-
-.sns-links ul {
-  font-family: "Impact";
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  padding: 0;
-  margin: 0;
-}
-
-.sns-links a {
-  font-family: "Impact";
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-style: italic;
-  transition: color 0.3s;
-}
-
-.sns-links a:hover {
-  color: #ffcc00; /* ホバー時の色 */
-}
-
-.sns-links i {
-  margin-right: 8px; /* アイコンとテキストの間にスペースを追加 */
-  font-size: 1.5rem; /* アイコンのサイズを調整 */
-}
-
-header nav ul {
-  font-family: "Impact";
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-header nav ul li a {
-  font-family: "Impact";
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-style: italic;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-  color: #ffcc00;
-}
-
-/* メインビジュアル */
 .main-visual {
   position: relative;
   width: 100%;
@@ -122,11 +36,6 @@ ul {
   padding: 0;
 }
 
-ul li {
-  font-family: "Noto Sans JP", sans-serif;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
 
 
 /* 情報グリッドの2カラムレイアウト */
@@ -242,6 +151,16 @@ ul li {
   color: #ff6666;
 }
 
+.schedule-info .ticket  {
+  font-size: 0.9rem;
+ 
+}
+
+.schedule-info .ticket i {
+  margin-right: 6px;
+  color: #ff6666;
+}
+
 
 .schedule-card-link {
   text-decoration: none;
@@ -351,131 +270,4 @@ ul li {
 
 .schedule-info .ticket i {
   margin-right: 2px;
-}
-
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: static;
-  width: 100%;
-  bottom: 0;
-}
-
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: static;
-  width: 100%;
-  bottom: 0;
-}
-
-/* ハンバーガー初期非表示 */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.menu-toggle i {
-  font-size: 1.5rem; /* ← 明示的に指定 */
-}
-
-@media (max-width: 768px) {
-
-  .schedule-info .place {
-    font-size: 0.8rem;
-    color: #ffffff;
-  }
- 
-.logo{
-  display: none;
-}
-
-.mobile-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* ← 変更 */
-  background-color: #001f3f;
-  padding: 10px 0;
-  position: relative;
-}
-  
-  .sns-links a {
-    display: flex;
-    align-items: center;
-  }
-
-
-  .sns-links a::after {
-    content: "";
-    display: none;
-  }
-
-  /* aタグ内のテキストを非表示にする方法（安全な方法） */
-  .sns-links a {
-    font-size: 0;
-  }
-
-  .sns-links a i {
-    font-size: 1.5rem; /* アイコンのサイズは維持 */
-  }
-
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1001;
-  }
-
-  #main-nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0px; /* 画面右から少し内側に */
-    background-color: #001f3f;
-    width: 100px;              /* 必要最小限の幅に */        /* 最小幅を指定（必要に応じて調整） */
-    padding: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-  }
-
-  #main-nav.active {
-    display: block;
-  }
-
-  #main-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 左寄せ（右寄せしたければflex-end） */
-    gap: 0;
-    margin: 0;
-    padding: 0;
-  }
-
-  #main-nav ul li {
-    width: 100%;
-  }
-
-  #main-nav ul li a {
-    display: block;
-    padding: 0px 20px;
-    font-size: 1rem;
-    color: white;
-    text-decoration: none;
-    font-family: 'Impact', sans-serif;
-    white-space: nowrap; /* 折り返さない */
-  }
-
-  #main-nav ul li a:hover {
-    background-color: #004080;
-  }
 }
