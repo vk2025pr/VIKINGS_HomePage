@@ -185,105 +185,207 @@
     transform: scale(1.05);
 }
 
-/* モーダル */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+@media (max-width: 768px) {
+  /* (A) 画像部分 (.modal-content) を少し小さくし、上下マージンも縮める */
+  .modal-content {
+    max-width: 90vw;       /* 横幅の90%以内 */
+    max-height: 80vh;      /* 縦は80%以内 */
+    margin: 60px auto;     /* 上下の余白を少し縮小 */
+  }
+
+  /* (B) 閉じるボタン (×) のサイズと位置を調整 */
+  .close {
+    font-size: 32px;      /* アイコンを少し小さく */
+    top: 12px;            /* 上から12px */
+    right: 16px;          /* 右から16px */
+  }
+
+  /* (C) 矢印ボタン (.modal-nav) を上下中央ではなく“画像下部付近”に移動 */
+  .modal-nav {
+    font-size: 2rem;      /* 矢印アイコンを少し小さく */
+    padding: 6px;
+    top: auto;            /* top 指定を無効化 */
+    /* ここでは bottom 指定をせずに、後の .prev/.next で指定します */
+    transform: none;      /* translateY を無効化 */
+  }
+
+  /* 「前へ」ボタンを画像下から20px、かつ横幅の5%の位置に */
+  .modal-nav.prev {
+    bottom: 20px;         /* 画像下から20px */
+    left: 5vw;            /* 左から画面幅の5% */
+  }
+  /* 「次へ」ボタンを画像下から20px、かつ横幅の5%の位置に */
+  .modal-nav.next {
+    bottom: 20px;
+    right: 5vw;
+  }
 }
 
-.modal-content {
-    margin: 100px auto;
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-    border: 2px solid white;
-    border-radius: 8px;
-}
+/* ────────────────────────────────────
+   3. より小さい画面（幅600px以下）向けに追加微調整
+──────────────────────────────────── */
+@media (max-width: 600px) {
+  /* (A) 画像をさらに幅広ぎみにして残り余白を少なく */
+  .modal-content {
+    max-width: 95vw;      /* 画面幅の95% */
+    max-height: 75vh;     /* 高さは75%に */
+    margin: 50px auto;    /* 上下の余白をさらに縮小 */
+  }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 10002;
-}
+  /* (B) 閉じるボタンのサイズ・位置をさらに縮小 */
+  .close {
+    font-size: 28px;
+    top: 8px;
+    right: 12px;
+  }
 
-.close:hover {
-  color: #bbb;
-}
-
-/* ===========================
-   ■ ここから“矢印ボタン”用のスタイルを追加
-   =========================== */
-.modal-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 10003; /* 閉じるボタン・画像よりも前面に出す */
-  transition: color 0.2s ease;
-}
-
-.modal-nav:hover {
-  color: #ddd;
-}
-
-/* 「前へ」ボタン（左側に固定） */
-.modal-nav.prev {
-  left: 5px;
-}
-
-/* 「次へ」ボタン（右側に固定） */
-.modal-nav.next {
-  right: 5px;
+  /* (C) 矢印ボタンをもう少し小さくし、位置を調整 */
+  .modal-nav {
+    font-size: 1.6rem;    /* 矢印文字を1.6remに */
+    padding: 4px;
+  }
+  .modal-nav.prev {
+    bottom: 16px;         /* 下から16px */
+    left: 4vw;            /* 左から4% */
+  }
+  .modal-nav.next {
+    bottom: 16px;
+    right: 4vw;
+  }
 }
 
 
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-　
+  /* （１）.schedule-container：縦積み＋中央寄せになるように切り替え */
   .schedule-container {
-    padding: 10px;
-    gap: 20px;
-}
-
-  .modal-content {
-            margin: 80px auto;
-            max-width: 80%;
-            max-height: 80%;
-          }
-        
-  .close {
-            font-size: 40px;
-            top: 30px;
-            right: 20px;
-          }
-
- 
-  .modal-nav {
-    bottom: 20px;  
-    font-size: 1.3rem;
-    left: 5px;
-    right: 5px;
-
+    display: flex;               /* Flexbox のまま */
+    flex-wrap: wrap;             /* 折り返しはそのまま有効に */
+    flex-direction: column;      /* → “縦に積む” 設定 */
+    align-items: center;         /* → 子要素（.schedule）を横方向の中央に */
+    padding-left: 0px;             /* PC用の padding-left:50px をリセット */
+    padding-right: 0px;            /* もし padding-right を指定していたならリセット */
+    box-sizing: border-box;
   }
 
-  
+  /* （２）.schedule：幅100%＋最大 400px、かつ中央寄せ */
+  .schedule {
+    flex: 0 1 auto;              /* 縮小（flex-shrink:1）できる設定に変更  */
+    width: 100%;                 /* → 親幅に合わせて幅100%になる */
+    max-width: 400px;            /* → それ以上は広がらない（任意で数値変更可能） */
+    margin: 0 auto 15px;         /* → 左右 auto で中央寄せ、下に15px余白 */
+    height: auto;                /* PC用の height:600px を解除して自動高さ */
+    box-sizing: border-box;
+  }
+
+  /* （３）.infomation-all と .match-result-sheet：上下のブロックを中央寄せに */
+  .infomation-all,
+  .match-result-sheet {
+    margin-left: 0;              /* PC用の margin-left:auto をリセット */
+    margin-right: 0;             /* 念のためリセット */
+    margin: 0 auto 10px;         /* → 左右 auto で中央寄せ、下に10px余白 */
+    width: 100%;                 /* カード内でも幅いっぱい（必要に応じて調整） */
+    box-sizing: border-box;
+  }
+
+  /* （４）.match-result-sheet table：幅100%にしてはみ出し防止 */
+  .match-result-sheet table {
+    width: 100%;
+    min-width: unset;            /* PC用 min-width:400px があれば解除 */
+    box-sizing: border-box;
+  }
+
+  /* （５）.photo-gallery：列数を２列にしてサムネイルを大きく */
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列に */
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .photo-gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* （６）フォントサイズや余白の微調整（任意） */
+  .team-info p {
+    font-size: 1.2rem;           /* 見出しテキストを少し縮小 */
+  }
+  .date {
+    font-size: 0.9rem;
+  }
+  .resultw,
+  .resultl,
+  .resultd {
+    font-size: 1.2rem;
+  }
+  .scoreassist {
+    font-size: 0.65rem;
+  }
 }
 
+@media (max-width: 768px) {
+  .modal-content {
+    /* 幅を 80% (＝80vw) ではなく 90% (＝90vw) にして左右に余白を残す */
+    max-width: 90vw;
+    margin: 80px auto; 
+  }
+
+  .close {
+    font-size: 30px;
+    top: 10px;
+    right: 20px;
+  }
+
+  /* 矢印も少し小さく、高さ中央ではなく画像下部に寄せたいので bottom 指定に切り替える */
+  .modal-nav {
+    font-size: 2rem;   /* 矢印自体を小さく */
+    padding: 8px;
+  }
+
+  /* ここで「画像の中央配置」ではなく「画像の下部付近」に矢印を置く */
+  .modal-nav.prev {
+    bottom: 20px;      /* 画像の下から 20px の位置 */
+    /* 左右の余白はパーセンテージで指定しておけば狭い画面でも潰れにくい */
+    left: 5vw;         /* 画面幅の 5％を余白として使う */
+    top: auto;         /* top → 無効化 */
+    transform: none;   /* translateY のみではなく bottom 固定なので transform をリセット */
+  }
+  .modal-nav.next {
+    bottom: 20px;
+    right: 5vw;
+    top: auto;
+    transform: none;
+  }
+}
+
+/* ────────────────────────────────────
+   （C）さらに小さい画面向け：600px 以下
+──────────────────────────────────── */
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 95vw;    /* さらに少し余裕を増やしたいなら 95vw に */
+    margin: 60px auto;
+  }
+
+  .close {
+    font-size: 24px;
+    top: 8px;
+    right: 16px;
+  }
+
+  .modal-nav {
+    font-size: 1.6rem;  /* 矢印をさらに小さく */
+    padding: 6px;
+  }
+
+  .modal-nav.prev {
+    bottom: 16px;
+    left: 3vw;          /* 狭い画面では左右 3% の余白 */
+  }
+  .modal-nav.next {
+    bottom: 16px;
+    right: 3vw;
+  }
+}
