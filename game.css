@@ -1,3 +1,7 @@
+.year h1{
+  padding-left: 60px;
+
+}
 
 .match-wrapper {
     display: flex;
@@ -184,6 +188,100 @@
     background-color: #ffe066;
     transform: scale(1.05);
 }
+
+/* ---------------------------------------------------
+   モーダル（初期は非表示・必要に応じて flex 表示）
+   --------------------------------------------------- */
+   .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  
+    /* ← ここを変更：初期は隠す */
+    display: none;
+  
+    /* 中央寄せのための flex プロパティは残しておく */
+    justify-content: center;
+    align-items: center;
+  
+    z-index: 9999;
+  }
+
+  .modal-content {
+    /* 高さ・幅ともに自動調整して縦横比を維持 */
+    width: auto;
+    height: auto;
+  
+    /* 画面占有率の上限を設定 */
+    max-width: 80vw;   /* ビューポート幅の80%まで */
+    max-height: 80vh;  /* ビューポート高さの80%まで */
+  
+    /* 余白をつけて画像が端にぴったりくっつかないように */
+    padding: 10px;
+  
+    /* 枠線や影はお好みでそのまま */
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  
+    /* 画像を「はみ出さずに収める」指定（必要なら） */
+    object-fit: contain;
+    
+    display: block;
+    margin: 0 auto;
+
+  }
+  
+  /* JS で modal.style.display='flex' を使っているならこのままでOKですが、
+     class 切り替えで対応したい場合は下記を追加して、
+     JS 側で modal.classList.add('show') / remove('show') を行ってください。 */
+  .modal.show {
+    display: flex;
+  }
+  
+  /* モーダル内の要素はすべて絶対配置に */
+  .modal-nav,
+  .modal .close {
+    position: absolute;
+    z-index: 10001;
+  }
+  
+  /* 「×」ボタン */
+  .modal .close {
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* 「前へ」矢印 */
+  .modal-nav.prev {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* 「次へ」矢印 */
+  .modal-nav.next {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 
 @media (max-width: 768px) {
   /* (A) 画像部分 (.modal-content) を少し小さくし、上下マージンも縮める */

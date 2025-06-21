@@ -26,7 +26,7 @@ h4 {
 
 .right-column h4 {
   margin-top: 2px;
-  font-size: 1.0rem;
+  font-size: 1.3rem;
   color: #ff6666;
 }
 
@@ -124,13 +124,13 @@ ul {
 }
 
 .schedule-date .week {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 4px;
   color: #ffffff;
 }
 
 .schedule-date .time {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin-top: 2px;
   color: #ffffff;
 }
@@ -142,7 +142,7 @@ ul {
 }
 
 .schedule-info .place {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #ffffff;
 }
 
@@ -152,7 +152,7 @@ ul {
 }
 
 .schedule-info .ticket  {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-top:10px;
  
 }
@@ -209,12 +209,12 @@ ul {
   color: white;
   font-weight: bold;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .standings-table td {
   padding: 15px 10px; 
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   color: #ffffff;
   border-top: 1px solid #ccc;
   background-color: #063b73;
@@ -238,7 +238,7 @@ ul {
 
 .info-grid ul li {
   margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .info-grid ul li a {
