@@ -30,6 +30,12 @@ h4 {
   color: #ff6666;
 }
 
+.left-column h4 {
+  margin-top: 2px;
+  font-size: 1.3rem;
+  color: #ff6666;
+}
+
 
 ul {
   list-style-type: none;

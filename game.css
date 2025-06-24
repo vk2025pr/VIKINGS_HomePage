@@ -339,6 +339,11 @@
   .modal-nav.next {
     right: 5vw;
   }
+
+  .year h1 {
+    padding-left: 0; /* PC用の左の余白をなくす */
+    text-align: center; /* テキストを中央に配置する */
+  }
 }
 
 /* ────────────────────────────────────
