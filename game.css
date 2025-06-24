@@ -1,414 +1,308 @@
-.year h1{
+.year h1 {
   padding-left: 60px;
-
 }
 
 .match-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  
-  .match-info {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-  }
-  
-  .match-details-right {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.match-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.match-details-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* 試合セクション */
 .schedule-container {
-    display: flex; /* 横並びに配置 */
-    flex-wrap: wrap; /* 要素が画面幅を超えた場合に折り返す */
-    gap: 10px; 
-    padding-left:50px;/* 各要素間のスペース *//* 要素間のスペースを均等に配置 */
-  }
-  
-  .schedule {
-    height: 600px; 
-    flex: 0 0 calc(50% - 20px); /* 横幅を親要素の50%に設定し、間隔を考慮 */
-    box-sizing: border-box; 
-    margin-bottom: 15px/* パディングやボーダーを含めたサイズ計算 */
-  }
+  display: flex; /* 横並びに配置 */
+  flex-wrap: wrap; /* 要素が画面幅を超えた場合に折り返す */
+  gap: 10px;
+  padding-left: 50px; /* 各要素間のスペース */
+}
+
+.schedule {
+  height: 600px;
+  flex: 0 0 calc(50% - 20px); /* 横幅を親要素の50%に設定し、間隔を考慮 */
+  box-sizing: border-box;
+  margin-bottom: 15px; /* パディングやボーダーを含めたサイズ計算 */
+}
 
 /* 各試合のスタイル */
 .match-info {
-    background: linear-gradient(to right, #003366, #003366);
-    color: #ffffff;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
+  background: linear-gradient(to right, #003366, #003366);
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
-
-
 .team-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .team-logo {
-    width: 80px;
-    height: auto;
+  width: 80px;
+  height: auto;
 }
 
 .team-info p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffcc00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffcc00;
 }
 
 /* 試合の日付と結果 */
 .date {
-    font-size: 1rem;
-    color: #ffffff;
-    margin-top: 5px;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 5px;
 }
 
 .resultw {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #72C6EF;
-    margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #72c6ef;
+  margin-top: 10px;
 }
 
 .resultl {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ff6666;
-    margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff6666;
+  margin-top: 10px;
 }
 
 .resultd {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ffff66;
-    margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffff66;
+  margin-top: 10px;
 }
 
 .scoreassist {
-    font-weight: bold;
-    font-size: 0.7rem;
-    color: #ffffff;
-    margin-top: 15px;
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: #ffffff;
+  margin-top: 15px;
 }
 
 /* 横並びにする */
 .infomation-all,
 .match-result-sheet {
-    margin-left: auto;
-  }
+  margin-left: auto;
+}
 
 /* 表のスタイル */
 .match-result-sheet table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background-color: white;
-    color: #003366;
-    border-radius: 8px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: white;
+  color: #003366;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .match-result-sheet th,
 .match-result-sheet td {
-    border: 1px solid #001f3f;
-    padding: 10px;
-    text-align: center;
+  border: 1px solid #001f3f;
+  padding: 10px;
+  text-align: center;
 }
 
 .match-result-sheet th {
-    background-color: #004488;
-    color: white;
-    font-weight: bold;
+  background-color: #004488;
+  color: white;
+  font-weight: bold;
 }
 
 .match-result-sheet tr:nth-child(2) td {
-    background-color: #d1ecf1;
+  background-color: #d1ecf1;
 }
 
 .match-result-sheet td:last-child {
-    background-color: #ffe066;
-    font-weight: bold;
+  background-color: #ffe066;
+  font-weight: bold;
 }
 
 /* フォトギャラリー */
 .photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .photo-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .photo-gallery img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* フォトギャラリーを非表示にするクラス */
+/* フォトギャラリーを非表示にするクラス【修正点】
+  !important を追加して、他のスタイルに上書きされないようにする
+*/
 .hidden {
-    display: none;
+  display: none !important;
 }
 
 /* ボタンのスタイル */
 .toggle-gallery {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background-color: #ffcc00;
-    color: #003366;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #ffcc00;
+  color: #003366;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .toggle-gallery:hover {
-    background-color: #ffe066;
-    transform: scale(1.05);
+  background-color: #ffe066;
+  transform: scale(1.05);
 }
 
 /* ---------------------------------------------------
-   モーダル（初期は非表示・必要に応じて flex 表示）
+   モーダル
    --------------------------------------------------- */
-   .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-  
-    /* ← ここを変更：初期は隠す */
-    display: none;
-  
-    /* 中央寄せのための flex プロパティは残しておく */
-    justify-content: center;
-    align-items: center;
-  
-    z-index: 9999;
-  }
-
-  .modal-content {
-    /* 高さ・幅ともに自動調整して縦横比を維持 */
-    width: auto;
-    height: auto;
-  
-    /* 画面占有率の上限を設定 */
-    max-width: 80vw;   /* ビューポート幅の80%まで */
-    max-height: 80vh;  /* ビューポート高さの80%まで */
-  
-    /* 余白をつけて画像が端にぴったりくっつかないように */
-    padding: 10px;
-  
-    /* 枠線や影はお好みでそのまま */
-    border: 3px solid #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-  
-    /* 画像を「はみ出さずに収める」指定（必要なら） */
-    object-fit: contain;
-    
-    display: block;
-    margin: 0 auto;
-
-  }
-  
-  /* JS で modal.style.display='flex' を使っているならこのままでOKですが、
-     class 切り替えで対応したい場合は下記を追加して、
-     JS 側で modal.classList.add('show') / remove('show') を行ってください。 */
-  .modal.show {
-    display: flex;
-  }
-  
-  /* モーダル内の要素はすべて絶対配置に */
-  .modal-nav,
-  .modal .close {
-    position: absolute;
-    z-index: 10001;
-  }
-  
-  /* 「×」ボタン */
-  .modal .close {
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  /* 「前へ」矢印 */
-  .modal-nav.prev {
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  
-  /* 「次へ」矢印 */
-  .modal-nav.next {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-@media (max-width: 768px) {
-  /* (A) 画像部分 (.modal-content) を少し小さくし、上下マージンも縮める */
-  .modal-content {
-    max-width: 90vw;       /* 横幅の90%以内 */
-    max-height: 80vh;      /* 縦は80%以内 */
-    margin: 60px auto;     /* 上下の余白を少し縮小 */
-  }
-
-  /* (B) 閉じるボタン (×) のサイズと位置を調整 */
-  .close {
-    font-size: 32px;      /* アイコンを少し小さく */
-    top: 12px;            /* 上から12px */
-    right: 16px;          /* 右から16px */
-  }
-
-  /* (C) 矢印ボタン (.modal-nav) を上下中央ではなく“画像下部付近”に移動 */
-  .modal-nav {
-    font-size: 2rem;      /* 矢印アイコンを少し小さく */
-    padding: 6px;
-    top: auto;            /* top 指定を無効化 */
-    /* ここでは bottom 指定をせずに、後の .prev/.next で指定します */
-    transform: none;      /* translateY を無効化 */
-  }
-
-  /* 「前へ」ボタンを画像下から20px、かつ横幅の5%の位置に */
-  .modal-nav.prev {
-    bottom: 20px;         /* 画像下から20px */
-    left: 5vw;            /* 左から画面幅の5% */
-  }
-  /* 「次へ」ボタンを画像下から20px、かつ横幅の5%の位置に */
-  .modal-nav.next {
-    bottom: 20px;
-    right: 5vw;
-  }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; /* 初期は非表示 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
+
+.modal-content {
+  width: auto;
+  height: auto;
+  max-width: 80vw;
+  max-height: 80vh;
+  padding: 10px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-nav,
+.modal .close {
+  position: absolute;
+  z-index: 10001;
+}
+
+.modal .close {
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-nav.prev {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-nav.next {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 
 /* ────────────────────────────────────
-   3. より小さい画面（幅600px以下）向けに追加微調整
+   レスポンシブ対応 (幅768px以下)
 ──────────────────────────────────── */
-@media (max-width: 600px) {
-  /* (A) 画像をさらに幅広ぎみにして残り余白を少なく */
-  .modal-content {
-    max-width: 95vw;      /* 画面幅の95% */
-    max-height: 75vh;     /* 高さは75%に */
-    margin: 50px auto;    /* 上下の余白をさらに縮小 */
-  }
-
-  /* (B) 閉じるボタンのサイズ・位置をさらに縮小 */
-  .close {
-    font-size: 28px;
-    top: 8px;
-    right: 12px;
-  }
-
-  /* (C) 矢印ボタンをもう少し小さくし、位置を調整 */
-  .modal-nav {
-    font-size: 1.6rem;    /* 矢印文字を1.6remに */
-    padding: 4px;
-  }
-  .modal-nav.prev {
-    bottom: 16px;         /* 下から16px */
-    left: 4vw;            /* 左から4% */
-  }
-  .modal-nav.next {
-    bottom: 16px;
-    right: 4vw;
-  }
-}
-
-
-
-/* レスポンシブ対応 */
 @media (max-width: 768px) {
-  /* （１）.schedule-container：縦積み＋中央寄せになるように切り替え */
+  /* （１）コンテナ：縦積み＋中央寄せ */
   .schedule-container {
-    display: flex;               /* Flexbox のまま */
-    flex-wrap: wrap;             /* 折り返しはそのまま有効に */
-    flex-direction: column;      /* → “縦に積む” 設定 */
-    align-items: center;         /* → 子要素（.schedule）を横方向の中央に */
-    padding-left: 0px;             /* PC用の padding-left:50px をリセット */
-    padding-right: 0px;            /* もし padding-right を指定していたならリセット */
-    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  /* （２）.schedule：幅100%＋最大 400px、かつ中央寄せ */
+  /* （２）各試合ブロック：幅100%＋最大幅指定 */
   .schedule {
-    flex: 0 1 auto;              /* 縮小（flex-shrink:1）できる設定に変更  */
-    width: 100%;                 /* → 親幅に合わせて幅100%になる */
-    max-width: 400px;            /* → それ以上は広がらない（任意で数値変更可能） */
-    margin: 0 auto 15px;         /* → 左右 auto で中央寄せ、下に15px余白 */
-    height: auto;                /* PC用の height:600px を解除して自動高さ */
-    box-sizing: border-box;
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 15px;
+    height: auto;
   }
 
-  /* （３）.infomation-all と .match-result-sheet：上下のブロックを中央寄せに */
+  /* （３）情報ブロック：中央寄せ */
   .infomation-all,
   .match-result-sheet {
-    margin-left: 0;              /* PC用の margin-left:auto をリセット */
-    margin-right: 0;             /* 念のためリセット */
-    margin: 0 auto 10px;         /* → 左右 auto で中央寄せ、下に10px余白 */
-    width: 100%;                 /* カード内でも幅いっぱい（必要に応じて調整） */
-    box-sizing: border-box;
-  }
-
-  /* （４）.match-result-sheet table：幅100%にしてはみ出し防止 */
-  .match-result-sheet table {
+    margin: 0 auto 10px;
     width: 100%;
-    min-width: unset;            /* PC用 min-width:400px があれば解除 */
-    box-sizing: border-box;
   }
-
-  /* （５）.photo-gallery：列数を２列にしてサムネイルを大きく */
+  
+  /* （４）テーブル：はみ出し防止 */
+  .match-result-sheet table {
+    min-width: unset;
+  }
+  
+  /* （５）フォトギャラリー：列数を２列に変更 */
   .photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2列に */
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-top: 15px;
   }
-  .photo-gallery img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* （６）フォントサイズや余白の微調整（任意） */
+  
+  /* （６）フォントサイズや余白の微調整 */
   .team-info p {
-    font-size: 1.2rem;           /* 見出しテキストを少し縮小 */
+    font-size: 1.2rem;
   }
   .date {
     font-size: 0.9rem;
@@ -421,69 +315,61 @@
   .scoreassist {
     font-size: 0.65rem;
   }
-}
 
-@media (max-width: 768px) {
+  /* （７）モーダル（スマホ用）*/
   .modal-content {
-    /* 幅を 80% (＝80vw) ではなく 90% (＝90vw) にして左右に余白を残す */
     max-width: 90vw;
     margin: 80px auto; 
   }
-
-  .close {
-    font-size: 30px;
-    top: 10px;
-    right: 20px;
+  .modal .close {
+    font-size: 32px;
+    top: 12px;
+    right: 16px;
   }
-
-  /* 矢印も少し小さく、高さ中央ではなく画像下部に寄せたいので bottom 指定に切り替える */
-  .modal-nav {
-    font-size: 2rem;   /* 矢印自体を小さく */
+  .modal .modal-nav {
+    font-size: 2rem;
     padding: 8px;
-  }
-
-  /* ここで「画像の中央配置」ではなく「画像の下部付近」に矢印を置く */
-  .modal-nav.prev {
-    bottom: 20px;      /* 画像の下から 20px の位置 */
-    /* 左右の余白はパーセンテージで指定しておけば狭い画面でも潰れにくい */
-    left: 5vw;         /* 画面幅の 5％を余白として使う */
-    top: auto;         /* top → 無効化 */
-    transform: none;   /* translateY のみではなく bottom 固定なので transform をリセット */
-  }
-  .modal-nav.next {
-    bottom: 20px;
-    right: 5vw;
     top: auto;
     transform: none;
+    bottom: 20px;
+  }
+  .modal-nav.prev {
+    left: 5vw;
+  }
+  .modal-nav.next {
+    right: 5vw;
   }
 }
 
 /* ────────────────────────────────────
-   （C）さらに小さい画面向け：600px 以下
+   より小さい画面向け (幅600px以下)
 ──────────────────────────────────── */
 @media (max-width: 600px) {
+  /* （A）モーダル画像 */
   .modal-content {
-    max-width: 95vw;    /* さらに少し余裕を増やしたいなら 95vw に */
+    max-width: 95vw;
+    max-height: 75vh;
     margin: 60px auto;
   }
 
-  .close {
-    font-size: 24px;
+  /* （B）閉じるボタン */
+  .modal .close {
+    font-size: 28px;
     top: 8px;
-    right: 16px;
+    right: 12px;
   }
 
+  /* （C）矢印ボタン */
   .modal-nav {
-    font-size: 1.6rem;  /* 矢印をさらに小さく */
+    font-size: 1.6rem;
     padding: 6px;
   }
-
   .modal-nav.prev {
     bottom: 16px;
-    left: 3vw;          /* 狭い画面では左右 3% の余白 */
+    left: 4vw;
   }
   .modal-nav.next {
     bottom: 16px;
-    right: 3vw;
+    right: 4vw;
   }
 }
