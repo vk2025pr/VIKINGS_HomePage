@@ -74,6 +74,11 @@
   margin-top: 5px;
 }
 
+a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
 .resultw {
   font-size: 1.4rem;
   font-weight: bold;
