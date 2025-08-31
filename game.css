@@ -200,11 +200,14 @@ a {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none; /* 初期は非表示 */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  padding: 16px; /* 端のはみ出し保険 */
+  box-sizing: border-box;
+  /* iOS セーフエリア考慮 */
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
 }
 
 .modal-content {
@@ -219,7 +222,7 @@ a {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  box-sizing: border-box; /* ← border/padding分も含めてはみ出し防止 */
+  box-sizing: border-box;
 }
 
 .modal.show {
@@ -241,7 +244,7 @@ a {
   cursor: pointer;
 }
 
-/* PCでは従来通り、左右中央に重ねる */
+/* PCでは従来通り左右中央に重ねる */
 .modal-nav.prev {
   top: 50%;
   left: 20px;
@@ -265,9 +268,9 @@ a {
 }
 
 /* ────────────────────────────────────
+   レスポンシブ対応 (幅768px以下)
    ─────────────────────────────────── */
 @media (max-width: 768px) {
-  /* （１）コンテナ：縦積み＋中央寄せ */
   .schedule-container {
     flex-direction: column;
     align-items: center;
@@ -275,7 +278,6 @@ a {
     padding-right: 0;
   }
 
-  /* （２）各試合ブロック */
   .schedule {
     flex: 0 1 auto;
     width: 100%;
@@ -290,7 +292,93 @@ a {
     width: 100%;
   }
   
-  .match-result-sheet table {
-    min-width: unset;
+  .match-result-sheet table { min-width: unset; }
+  
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
   }
   
+  .team-info p { font-size: 1.2rem; }
+  .date { font-size: 0.9rem; }
+  .resultw, .resultl, .resultd { font-size: 1.2rem; }
+  .scoreassist { font-size: 0.65rem; }
+
+  .year h1 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  /* === モーダル（スマホ専用） === */
+  .modal.show {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, max-content); /* 画像幅に合わせる */
+    justify-content: center;  /* グリッド全体を中央寄せ */
+    align-content: center;
+    row-gap: 8px;
+  }
+
+  .modal-content {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    max-width: 95vw;
+    max-height: 72vh;
+    margin: 56px auto 8px;
+  }
+
+  .modal .close {
+    font-size: 32px;
+    top: 12px;
+    right: 16px;
+    position: absolute;
+  }
+
+  .modal-nav {
+    position: static;
+    font-size: 2rem;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transform: none;
+  }
+  .modal-nav.prev {
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: start;
+    margin-right: 16px;
+  }
+  .modal-nav.next {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: end;
+    margin-left: 16px;
+  }
+}
+
+/* ────────────────────────────────────
+   より小さい画面向け (幅600px以下)
+   ─────────────────────────────────── */
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 95vw;
+    max-height: 72vh;
+    margin: 56px auto 8px;
+  }
+
+  .modal .close {
+    font-size: 28px;
+    top: 8px;
+    right: 12px;
+  }
+
+  .modal-nav {
+    font-size: 1.8rem;
+    padding: 6px 10px;
+  }
+}
+
+
