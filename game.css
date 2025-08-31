@@ -1,384 +1,148 @@
-.year h1 {
-  padding-left: 60px;
-}
+/* ========== 共通レイアウト ========== */
+.year h1 { padding-left: 60px; }
 
 .match-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap;
 }
 
-.match-info {
-  flex: 1;
-  min-width: 300px;
-  max-width: 600px;
-}
+.match-info { flex: 1; min-width: 300px; max-width: 600px; }
 
 .match-details-right {
-  flex: 1;
-  min-width: 300px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex: 1; min-width: 300px; max-width: 600px; display: flex; flex-direction: column; gap: 20px;
 }
 
 /* 試合セクション */
 .schedule-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-left: 50px;
+  display: flex; flex-wrap: wrap; gap: 10px; padding-left: 50px;
 }
-
 .schedule {
-  height: 600px;
-  flex: 0 0 calc(50% - 20px);
-  box-sizing: border-box;
-  margin-bottom: 15px;
+  height: 600px; flex: 0 0 calc(50% - 20px); box-sizing: border-box; margin-bottom: 15px;
 }
 
-/* 各試合のスタイル */
+/* 試合カード */
 .match-info {
-  background: linear-gradient(to right, #003366, #003366);
-  color: #ffffff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease;
+  background: linear-gradient(to right, #003366, #003366); color: #fff;
+  padding: 25px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  transition: transform .3s ease;
 }
+.team-info { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+.team-logo { width: 80px; height: auto; }
+.team-info p { font-size: 1.5rem; font-weight: bold; color: #ffcc00; }
+.date { font-size: 1rem; color: #fff; margin-top: 5px; }
+a { color: #ffcc00; text-decoration: none; }
+.resultw { font-size: 1.4rem; font-weight: bold; color: #72c6ef; margin-top: 10px; }
+.resultl { font-size: 1.4rem; font-weight: bold; color: #ff6666; margin-top: 10px; }
+.resultd { font-size: 1.4rem; font-weight: bold; color: #ffff66; margin-top: 10px; }
+.scoreassist { font-weight: bold; font-size: .7rem; color: #fff; margin-top: 15px; }
 
-.team-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
-}
-
-.team-logo {
-  width: 80px;
-  height: auto;
-}
-
-.team-info p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffcc00;
-}
-
-/* 試合の日付と結果 */
-.date {
-  font-size: 1rem;
-  color: #ffffff;
-  margin-top: 5px;
-}
-
-a {
-  color: #ffcc00;
-  text-decoration: none;
-}
-
-.resultw {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #72c6ef;
-  margin-top: 10px;
-}
-
-.resultl {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ff6666;
-  margin-top: 10px;
-}
-
-.resultd {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #ffff66;
-  margin-top: 10px;
-}
-
-.scoreassist {
-  font-weight: bold;
-  font-size: 0.7rem;
-  color: #ffffff;
-  margin-top: 15px;
-}
-
-/* 横並びにする */
-.infomation-all,
-.match-result-sheet {
-  margin-left: auto;
-}
-
-/* 表のスタイル */
+/* テーブル */
+.infomation-all, .match-result-sheet { margin-left: auto; }
 .match-result-sheet table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  background-color: white;
-  color: #003366;
-  border-radius: 8px;
-  overflow: hidden;
+  width: 100%; border-collapse: collapse; margin-top: 10px; background: #fff; color: #003366;
+  border-radius: 8px; overflow: hidden;
 }
-
-.match-result-sheet th,
-.match-result-sheet td {
-  border: 1px solid #001f3f;
-  padding: 10px;
-  text-align: center;
+.match-result-sheet th, .match-result-sheet td {
+  border: 1px solid #001f3f; padding: 10px; text-align: center;
 }
-
-.match-result-sheet th {
-  background-color: #004488;
-  color: white;
-  font-weight: bold;
-}
-
-.match-result-sheet tr:nth-child(2) td {
-  background-color: #d1ecf1;
-}
-
-.match-result-sheet td:last-child {
-  background-color: #ffe066;
-  font-weight: bold;
-}
+.match-result-sheet th { background: #004488; color: #fff; font-weight: bold; }
+.match-result-sheet tr:nth-child(2) td { background: #d1ecf1; }
+.match-result-sheet td:last-child { background: #ffe066; font-weight: bold; }
 
 /* フォトギャラリー */
 .photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px;
 }
-
 .photo-gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  width: 100%; height: auto; border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3); transition: transform .3s ease;
 }
+.photo-gallery img:hover { transform: scale(1.05); }
+.hidden { display: none !important; }
 
-.photo-gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* フォトギャラリーの非表示 */
-.hidden {
-  display: none !important;
-}
-
-/* ボタンのスタイル */
 .toggle-gallery {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin-top: 20px;
-  padding: 10px 25px;
-  background-color: #ffcc00;
-  color: #003366;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  margin-top: 20px; padding: 10px 25px; background: #ffcc00; color: #00366;
+  font-weight: bold; border: none; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: .3s;
 }
+.toggle-gallery:hover { background: #ffe066; transform: scale(1.05); }
 
-.toggle-gallery:hover {
-  background-color: #ffe066;
-  transform: scale(1.05);
-}
-
-/* ---------------------------------------------------
-   モーダル（共通）
-   --------------------------------------------------- */
+/* ========== モーダル ========== */
 .modal {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  box-sizing: border-box;
-  /* iOS セーフエリア考慮 */
+  position: fixed; inset: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,.8);
+  display: none; justify-content: center; align-items: center;
+  z-index: 9999; box-sizing: border-box;
   padding-left: max(12px, env(safe-area-inset-left));
   padding-right: max(12px, env(safe-area-inset-right));
 }
+.modal.show { display: flex; }
+.modal-overlay { position: absolute; inset: 0; }
+.modal .close {
+  position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px;
+  font-weight: bold; cursor: pointer; z-index: 10001; background: none; border: 0;
+}
 
+/* 画像（枠込みで画面内に収める） */
 .modal-content {
-  width: auto;
-  height: auto;
-  max-width: 80vw;
-  max-height: 80vh;
-  padding: 10px;
-  border: 3px solid #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  box-sizing: border-box;
+  width: auto; height: auto; max-width: 80vw; max-height: 80vh;
+  padding: 10px; border: 3px solid #fff; border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,.6);
+  object-fit: contain; display: block; margin: 0 auto; box-sizing: border-box;
 }
 
-.modal.show {
-  display: flex;
+/* PC：矢印は左右中央に重ねる */
+.modal-nav {
+  position: absolute; z-index: 10001; background: transparent; border: none;
+  color: #fff; cursor: pointer; font-size: 2rem;
 }
+.modal-nav.prev { top: 50%; left: 20px; transform: translateY(-50%); }
+.modal-nav.next { top: 50%; right: 20px; transform: translateY(-50%); }
 
-.modal-nav,
-.modal .close {
-  position: absolute;
-  z-index: 10001;
-}
-
-.modal .close {
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* PCでは従来通り左右中央に重ねる */
-.modal-nav.prev {
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.modal-nav.next {
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* ────────────────────────────────────
-   レスポンシブ対応 (幅768px以下)
-   ─────────────────────────────────── */
+/* ========== スマホ（768px以下） ========== */
 @media (max-width: 768px) {
-  .schedule-container {
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .schedule {
-    flex: 0 1 auto;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 15px;
-    height: auto;
-  }
-
-  .infomation-all,
-  .match-result-sheet {
-    margin: 0 auto 10px;
-    width: 100%;
-  }
-  
+  .schedule-container { flex-direction: column; align-items: center; padding-left: 0; padding-right: 0; }
+  .schedule { flex: 0 1 auto; width: 100%; max-width: 400px; margin: 0 auto 15px; height: auto; }
+  .infomation-all, .match-result-sheet { margin: 0 auto 10px; width: 100%; }
   .match-result-sheet table { min-width: unset; }
-  
-  .photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
+  .photo-gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
   .team-info p { font-size: 1.2rem; }
-  .date { font-size: 0.9rem; }
+  .date { font-size: .9rem; }
   .resultw, .resultl, .resultd { font-size: 1.2rem; }
-  .scoreassist { font-size: 0.65rem; }
+  .scoreassist { font-size: .65rem; }
+  .year h1 { padding-left: 0; text-align: center; }
 
-  .year h1 {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  /* === モーダル（スマホ専用） === */
-  .modal.show {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: repeat(2, max-content); /* 画像幅に合わせる */
-    justify-content: center;  /* グリッド全体を中央寄せ */
-    align-content: center;
-    row-gap: 8px;
+  /* 画像＋矢印を “内側の箱” で完結させる */
+  .modal-body{
+    display: inline-grid;
+    grid-template-rows: auto auto;      /* 1:画像 2:矢印行 */
+    grid-template-columns: 1fr 1fr;     /* ← → */
+    row-gap: 8px; align-items: center; justify-items: center;
+    width: fit-content; max-width: 95vw; /* 箱幅＝画像幅（画面内に収める） */
   }
 
-  .modal-content {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    max-width: 95vw;
-    max-height: 72vh;
-    margin: 56px auto 8px;
+  /* 画像は1行目で2列ぶち抜き／はみ出し防止 */
+  .modal-content{
+    grid-column: 1 / -1; grid-row: 1;
+    max-width: 95vw; max-height: 72vh; margin: 56px auto 8px;
   }
 
-  .modal .close {
-    font-size: 32px;
-    top: 12px;
-    right: 16px;
-    position: absolute;
-  }
+  /* 閉じるボタン少し小さく */
+  .modal .close { font-size: 32px; top: 12px; right: 16px; }
 
-  .modal-nav {
-    position: static;
-    font-size: 2rem;
-    padding: 8px 12px;
-    background: transparent;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    transform: none;
+  /* 矢印は “箱の中” で自然配置（絶対配置解除）→ 写真の真下で左右に並ぶ */
+  .modal-nav{
+    position: static; transform: none; font-size: 2rem; padding: 8px 12px;
   }
-  .modal-nav.prev {
-    grid-row: 2;
-    grid-column: 1;
-    justify-self: start;
-    margin-right: 16px;
-  }
-  .modal-nav.next {
-    grid-row: 2;
-    grid-column: 2;
-    justify-self: end;
-    margin-left: 16px;
-  }
+  .modal-nav.prev { grid-row: 2; grid-column: 1; justify-self: start; margin-right: 16px; }
+  .modal-nav.next { grid-row: 2; grid-column: 2; justify-self: end;   margin-left: 16px; }
 }
 
-/* ────────────────────────────────────
-   より小さい画面向け (幅600px以下)
-   ─────────────────────────────────── */
+/* ========== さらに小さい画面（600px以下） ========== */
 @media (max-width: 600px) {
-  .modal-content {
-    max-width: 95vw;
-    max-height: 72vh;
-    margin: 56px auto 8px;
-  }
-
-  .modal .close {
-    font-size: 28px;
-    top: 8px;
-    right: 12px;
-  }
-
-  .modal-nav {
-    font-size: 1.8rem;
-    padding: 6px 10px;
-  }
+  .modal-content { max-width: 95vw; max-height: 70vh; margin: 52px auto 8px; }
+  .modal .close { font-size: 28px; top: 8px; right: 12px; }
+  .modal-nav { font-size: 1.8rem; padding: 6px 10px; }
 }
+
 
 

@@ -852,13 +852,20 @@
   </div> <!-- /.schedule-container -->
 
   <!-- モーダル -->
-  <div id="modal" class="modal">
-    <div class="modal-overlay"></div>
-    <button id="prevBtn" class="modal-nav prev" aria-label="前の写真へ">&#10094;</button>
+ <div id="modal" class="modal" role="dialog" aria-modal="true">
+  <div class="modal-overlay"></div>
+
+  <!-- ▼ 追加：画像＋矢印だけを内側でまとめる -->
+  <div class="modal-body">
     <img id="modal-image" class="modal-content" alt="modal">
+    <button id="prevBtn" class="modal-nav prev" aria-label="前の写真へ">&#10094;</button>
     <button id="nextBtn" class="modal-nav next" aria-label="次の写真へ">&#10095;</button>
-    <span class="close">&times;</span>
   </div>
+  <!-- ▲ ここまで -->
+
+  <button class="close" aria-label="閉じる">&times;</button>
+</div>
+
 
   <!-- フッター -->
   <footer>
