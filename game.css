@@ -26,17 +26,17 @@
 
 /* 試合セクション */
 .schedule-container {
-  display: flex; /* 横並びに配置 */
-  flex-wrap: wrap; /* 要素が画面幅を超えた場合に折り返す */
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  padding-left: 50px; /* 各要素間のスペース */
+  padding-left: 50px;
 }
 
 .schedule {
   height: 600px;
-  flex: 0 0 calc(50% - 20px); /* 横幅を親要素の50%に設定し、間隔を考慮 */
+  flex: 0 0 calc(50% - 20px);
   box-sizing: border-box;
-  margin-bottom: 15px; /* パディングやボーダーを含めたサイズ計算 */
+  margin-bottom: 15px;
 }
 
 /* 各試合のスタイル */
@@ -166,9 +166,7 @@ a {
   transform: scale(1.05);
 }
 
-/* フォトギャラリーを非表示にするクラス【修正点】
-  !important を追加して、他のスタイルに上書きされないようにする
-*/
+/* フォトギャラリーの非表示 */
 .hidden {
   display: none !important;
 }
@@ -194,12 +192,11 @@ a {
 }
 
 /* ---------------------------------------------------
-   モーダル
+   モーダル（共通）
    --------------------------------------------------- */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
@@ -207,6 +204,7 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  padding: 16px; /* 端のはみ出し保険 */
 }
 
 .modal-content {
@@ -221,6 +219,7 @@ a {
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  box-sizing: border-box; /* ← border/padding分も含めてはみ出し防止 */
 }
 
 .modal.show {
@@ -242,6 +241,7 @@ a {
   cursor: pointer;
 }
 
+/* PCでは従来通り、左右中央に重ねる */
 .modal-nav.prev {
   top: 50%;
   left: 20px;
@@ -264,10 +264,8 @@ a {
   cursor: pointer;
 }
 
-
 /* ────────────────────────────────────
-   レスポンシブ対応 (幅768px以下)
-──────────────────────────────────── */
+   ─────────────────────────────────── */
 @media (max-width: 768px) {
   /* （１）コンテナ：縦積み＋中央寄せ */
   .schedule-container {
@@ -277,7 +275,7 @@ a {
     padding-right: 0;
   }
 
-  /* （２）各試合ブロック：幅100%＋最大幅指定 */
+  /* （２）各試合ブロック */
   .schedule {
     flex: 0 1 auto;
     width: 100%;
@@ -286,100 +284,13 @@ a {
     height: auto;
   }
 
-  /* （３）情報ブロック：中央寄せ */
   .infomation-all,
   .match-result-sheet {
     margin: 0 auto 10px;
     width: 100%;
   }
   
-  /* （４）テーブル：はみ出し防止 */
   .match-result-sheet table {
     min-width: unset;
   }
   
-  /* （５）フォトギャラリー：列数を２列に変更 */
-  .photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  /* （６）フォントサイズや余白の微調整 */
-  .team-info p {
-    font-size: 1.2rem;
-  }
-  .date {
-    font-size: 0.9rem;
-  }
-  .resultw,
-  .resultl,
-  .resultd {
-    font-size: 1.2rem;
-  }
-  .scoreassist {
-    font-size: 0.65rem;
-  }
-
-  /* （７）モーダル（スマホ用）*/
-  .modal-content {
-    max-width: 90vw;
-    margin: 80px auto; 
-  }
-  .modal .close {
-    font-size: 32px;
-    top: 12px;
-    right: 16px;
-  }
-  .modal .modal-nav {
-    font-size: 2rem;
-    padding: 8px;
-    top: auto;
-    transform: none;
-    bottom: 400px;
-  }
-  .modal-nav.prev {
-    left: 5vw;
-  }
-  .modal-nav.next {
-    right: 5vw;
-  }
-
-  .year h1 {
-    padding-left: 0; /* PC用の左の余白をなくす */
-    text-align: center; /* テキストを中央に配置する */
-  }
-}
-
-/* ────────────────────────────────────
-   より小さい画面向け (幅600px以下)
-──────────────────────────────────── */
-@media (max-width: 600px) {
-  /* （A）モーダル画像 */
-  .modal-content {
-    max-width: 95vw;
-    max-height: 75vh;
-    margin: 60px auto;
-  }
-
-  /* （B）閉じるボタン */
-  .modal .close {
-    font-size: 28px;
-    top: 8px;
-    right: 12px;
-  }
-
-  /* （C）矢印ボタン */
-  .modal-nav {
-    font-size: 1.6rem;
-    padding: 6px;
-  }
-  .modal-nav.prev {
-    bottom: 16px;
-    left: 4vw;
-  }
-  .modal-nav.next {
-    bottom: 16px;
-    right: 4vw;
-  }
-}
