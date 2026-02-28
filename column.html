@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VIKINGS Lacrosse Club バイキングスラクロスクラブ公式ホームページ コラム">
+  <meta name="keywords" content="バイキングス,ラクロス,vikings,VIKINGS,クラブ,社会人,Lacrosse, LACROSSE,コラム,記事">
+  <meta name="author" content="VIKINGS Lacrosse Club">
+  <title>COLUMN | バイキングスラクロスクラブ VIKINGS Lacrosse Club</title>
+  <link rel="icon" href="images/vikings_logo_black.PNG" type="image/png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="column.css">
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="logo">
+      <img src="images/vikings_logo_black.PNG" alt="VKINGS Lacrosse Club">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="sns-links">
+      <ul>
+        <li><a href="https://www.instagram.com/vikings_lacrosse" target="_blank"><i class="fab fa-instagram"></i>
+            Instagram</a></li>
+        <li><a href="https://www.youtube.com/@VIKINGSLacrosseClub" target="_blank"><i class="fab fa-youtube"></i>
+            YouTube</a></li>
+        <li><a href="https://www.facebook.com/vikingslax" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        </li>
+      </ul>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="member.html">MEMBER</a></li>
+        <li><a href="game.html">GAME</a></li>
+        <li><a href="league.html">LEAGUE</a></li>
+        <li><a href="column.html">COLUMN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <!-- メインコンテンツ -->
+  <main class="column-container">
+    <div class="column-grid">
+      <!-- 記事カードのプレースホルダー -->
+      <article class="column-card">
+        <a href=""
+          style="text-decoration: none; display: flex; flex-direction: column; height: 100%;">
+          <div class="column-img">
+            <!-- サムネイル -->
+            <img src="images/column_shimizu/IMG_1416.JPG" alt="清水選手">
+          </div>
+          <div class="column-content">
+            <span class="column-date">coming soon</span>
+            <h2 class="column-title">【カナダ挑戦】清水大貴 </h2>
+            <p class="column-excerpt">
+              </p>
+            <span class="read-more" style="margin-top:auto;">続きを読む <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </a>
+      </article>
+      <!-- 今後ここに追加していく -->
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 VIKINGS Lacrosse Club</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>
