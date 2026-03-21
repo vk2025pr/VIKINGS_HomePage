@@ -21,20 +21,20 @@
         }
 
         .article-header {
-            margin-bottom: 30px;
-            border-bottom: 3px solid #ffcc00;
-            /* VIKINGS Yellow */
-            padding-bottom: 20px;
-        }
+    margin: 0 -20px 30px -20px; 
+    padding: 0 20px 20px 20px;
+    /* 追加：中にあるテキストや要素をすべて中央へ */
+    text-align: center; 
+}
 
-        .article-title {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: #001f3f;
-            /* VIKINGS Navy */
-            line-height: 1.4;
-            font-weight: bold;
-        }
+.article-title {
+    /* text-align: center; は親にあるので消してもOK */
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #fff; /* 背景色がないと文字が見えない可能性があるので注意 */
+    line-height: 1.4;
+    font-weight: bold;
+}
 
         .article-meta {
             color: #777;
@@ -42,6 +42,7 @@
         }
 
         .article-content {
+            font-family: sans-serif;
             font-size: 1.05rem;
             line-height: 1.8;
             color: #444;
@@ -58,16 +59,11 @@
             flex-shrink: 0;
         }
 
-        .speaker-a {
-            color: #df2121;
+        .speaker {
+            color: #001f3f;
             /* VIKINGS Red */
         }
 
-        /* インタビュアー等 */
-        .speaker-b {
-            color: #001f3f;
-            /* VIKINGS Navy */
-        }
 
         /* 清水選手 */
         .dialogue-text {
@@ -117,43 +113,6 @@
             background-color: #b81b1b;
         }
 
-        /* レスポンシブ対応 - スマートフォン用 */
-        @media (max-width: 768px) {
-            .article-container {
-                margin: 20px auto;
-                padding: 0 15px;
-            }
-
-            .article-title {
-                font-size: 1.5rem;
-            }
-
-            .article-content {
-                font-size: 0.95rem;
-            }
-
-            .dialogue {
-                flex-direction: column;
-                margin-bottom: 25px;
-            }
-
-            .dialogue-speaker {
-                width: auto;
-                margin-bottom: 5px;
-                border-bottom: 1px dashed #ccc;
-                display: inline-block;
-                padding-bottom: 2px;
-            }
-
-            .article-image {
-                margin: 20px 0;
-            }
-
-            .back-btn-container {
-                margin-top: 30px;
-                margin-bottom: 30px;
-            }
-        }
     </style>
 </head>
 
@@ -189,732 +148,169 @@
     <main class="article-container" style="margin-top: 100px;">
         <article>
             <header class="article-header">
-                <h1 class="article-title">【インタビュー】清水 - 野球からラクロスへの転向、そして挑戦の軌跡</h1>
+                <h1 class="article-title">Lax for life　清水大貴のラクロス人生</h1>
                 <div class="article-meta">
-                    <span class="date"><i class="far fa-clock"></i> 2025.02.22</span>
+                    <span class="date"><i class="far fa-clock"></i> 2026.03.20</span>
                 </div>
             </header>
 
             <div class="article-content">
                 <!-- 導入画像 -->
                 <div class="article-image">
-                    <img src="images/column_shimizu/IMG_1409.JPG" alt="試合前の清水選手">
+                    <img src="images/column_shimizu/canadahe.JPG" alt="">
                 </div>
+
                 <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">公園でよく遊んでたね。活発な少年でした。小学校からずっと野球だね。親父とのキャッチボール、A:
-                        なるほどね、親父とのキャッチボール。</span>
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">まずは生い立ちや大学入学までのスポーツ歴を教えてください。
+</span>
                 </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">小・中・高だね。野球以外やってない。小・中・高でシニアクラブに入って、シニアで野球をやりながらって感じだったね。そこで小峰（コミネ）と、一学年上のせきしゅんさんのチームと一緒だった。小学校は本当に野球が好きで、やるのが楽しかった。だけど、中学でやっぱり楽しくなくなったよね。やっぱり小学校の頃、自分が一番上手いと思って天狗になってたわけよ。でも入った瞬間、天狗の鼻を折られた。上には上がいることを知り、どちらかといえばBチーム寄りの人間だったかな。そこそこ強いチームでやってたんで。</span>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">外でよく遊ぶ活発な少年でした。スポーツ歴は小・中・高とずっと野球一筋です。小学校は本当に野球が好きで、やるのが楽しかった記憶しかないです。<br>中学になってからはシニア野球のそこそこ強いチームに入ったこともあり、挫折を経験しました。小学校の頃は自分が一番上手かったので天狗になってた部分があったけど、中学になって上には上がいることを痛感し、結局Bチーム寄りの野球生活でした。この辺りから野球の楽しさは薄れていった感じがします。ちなみに同じチームには小峰拓真（Grizzlies）や関隼也さん（KAWASAKI FALCONS）がいました。
+</span>
                 </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">まあ、周りに上手い奴がいるっていうのもあるんだけど、それ以上に「ただ楽しいだけの野球」じゃなくなったんだよね。</span>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">中学で野球熱が冷めていった中で、高校でも野球を続けることにしたのはなぜですか？
+</span>
                 </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">好きだからやってるっていう感じじゃなくなったんだ。なのに、高校でも続けることにしたんだね。</span>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">野球しかなかったというのが正しい答えだと思います。みんなが勉強で高校に行くように、自分は野球で高校に行くのが普通だと思ってたので、野球から離れるという選択肢はなかったです。</span>
                 </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">野球しかなかったのかな。頭が悪かったから、野球しかないなって。スポーツから離れるという選択肢はなかったみんなが勉強で高校に行くように、俺は野球で高校に行くのが普通だと思ってた。</span>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">高校野球の３年間についても教えてください。
+</span>
                 </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">高校の野球部ではどんな感じだったの？バーターという制度によって、そこそこ中堅の高校に行くことになった。高校一年生の時は、自分がエースになるものだと思ってたのね。周りのレベルを見た感じ、エースになれると思ったし、「大学も野球で行けるかも」みたいに思ってた。でも、高一の終わりに監督が変わったのね。そこから、その監督にめちゃくちゃ嫌われ
-                        地獄が始まった。監督が来た初日に、ピッチャーの投球が終わってアイシングをしてたのね。そしたら「まだ練習は終わってねーだろ」って言われて。罰走みたいな感じでね。もうそこから、とことん嫌われた。初日から。多分、本当に全国で俺が一番監督に嫌われたんじゃないかっていう自負がある。出会った初日にそれがあって、二日目からそういう扱いを受けたんだ。「このままじゃ、高いお金を払ってくれている親に合わせる顔がない」と思った。ここで腐ったら終わりだなと思ったのが、高二の初めあたりかな。</span>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">地獄の３年間でした。入学当初こそ周りのレベルを見た感じ、自分がエースになるものだと思えるくらいの状況であったし、もしかしたら大学も野球で行けるかも、くらいに思っていました。しかし高一の終わりの監督交代があって、そこで新しい監督にめちゃくちゃ嫌われてしまい、地獄が始まりました。新監督になって一日目の練習の日、投球練習が終わってアイシングをしてた時に、「まだ練習は終わってねーだろ」ってめちゃくちゃ怒られ罰走させられて、その日からとことん嫌われてしまった感じです。全国で俺が一番監督に嫌われたんじゃないかっていう自負があるくらいには、嫌われていました。今でもなぜ自分があれほど明確に嫌われたのか、本当にわからないままです。試合前の練習にもベンチにも入らせてもらえない、みたいな扱いがずっと続いていました。このままじゃ高いお金を払ってくれている親に合わせる顔がないと思い、ここで腐ったら終わりだなと思ってなんとか自分を奮い立たせながら続けていました。<br>高二の終わりにはピッチャーから野手に転向して誰よりも練習しました。それでも引退が迫る最後の大会もなかなかベンチに入れさせてもらえなかったのですが、引退試合となった最後の試合で代打の出番をなんとかもぎ取ってヒットを打つことができました。この試合は神宮球場で開催されていたのですが、実は親父が神宮外苑で働いており、最後の最後に親父の前でヒットを打って引退できたことはとても嬉しかったです。撮られた動画の中に親父の「よし！」っていう声があって、それを聞いて泣きそうになりました。<br>これで高校野球も引退となりましたが、あまりに辛かった３年間だったので、大学ではもう野球は絶対にもうやらないと決めていました。大学は高校の付属校ということもありそのまま上がった感じです。
+</span>
                 </div>
-                <!-- 記事中画像1 -->
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">ラクロスとの出会いも含めて、大学1年生の頃についても教えてください。</span>
+                </div>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">最初はスケボーにハマりました。今まで野球という勝ち負けがはっきりするスポーツしかやっていなかったので、逆にスケボー界隈の自由な感じとか、表現みたいものにすごく惹かれたんだと思います。それでもどんなにスケボーをやっても、なんとなく心に穴が空いている感じがしていました。小学校から続けて、辛かったといえど10年も本気で続けた野球というスポーツがなくなってたことで、喪失感があったんだと思います。そんな感じでモヤモヤした喪失感を抱えながらスケボーをやっており、本当にこれでいいのかってずっと思っていました。スケボー自体は楽しいけど、野球と同じくらい熱中できるものではなかったですね。<br>そんな時にたまたま高校からの友達だった山田（城西大学の主将）がラクロスを始めるというので、誘われて一緒にやることになりました。最初は全然興味なかったのですが、練習に来ないと大学の課題を教えないというので、週一の朝練だけ行くという約束で始めました。とりあえず未知のスポーツだったのと、山田との約束も守らないといけないと思って、なんとなく自主練してみようと思い近くの公園に行きました。そしたらそこでラクロスをやってる人がいて、当時は分からなかったけど、それが小野紘輝さんでした。上手いなーとか思いながら小野さんの練習を遠くから見てたら、通りすがりのおじいちゃんが小野さんと話してて「あの下手くそな子にも教えてやりな」みたいな感じで冗談を言ってるのが聞こえたんです。その時になぜかわからないけどめちゃくちゃ腹が立って。クロス握ったばかりの人間なので当然当時は下手くそなのですが、そんなことも差し置いてめちゃくちゃ悔しくなってしまって、すぐに山田に電話して、「俺、ラクロスガチでやるわ。絶対に日本一目指す」って宣言して、切りました。山田も当時は困惑したと思います（笑）。でもあの瞬間スイッチが入って、俺はラクロスで日本一になるんだ、心の穴を埋めてくれるのはこれだって運命的な出会いを感じたんです。そこからはスケボーもバイトもやめて、狂ったようにラクロスにのめり込み始めました。小峰もラクロスを始めたというのもちょうど知っていたので、教えてもらったりしながら練習していました。彼は当時からすでに飛び抜けて上手かったので、彼の倍は練習しなきゃと思って、とにかくめちゃくちゃやり込みました。
+</span>
+                </div>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">大学2年以降いよいよ本格的にラクロスにのめり込んでいくわけですね。</span>
+                </div>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">2年生の大きな出来事としては関根皐太郎（VIKINGS MF #71）が仲間に加わったことです。当時俺が嫌いなうるさいグループに属してた一人でした（笑）
+当時は人数が一桁に満たない人数だったので、城西大学の漫画みたいなシンデレラストーリーを叶えるために、とにかく仲間集めを本気で頑張りました。 二年の終わりくらいには10人くらいの規模になりました。
+</span></div>
+
+<div class="article-content">
+                <!-- 導入画像 -->
                 <div class="article-image">
-                    <img src="images/column_shimizu/IMG_1411.JPG" alt="静かに闘志を燃やす清水選手">
+                    <img src="images/column_shimizu/intai.JPG" alt="">
                 </div>
+
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">日々の練習やコーチなどはどんな感じでしたか？</span>
+                </div>
+                                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">ノウハウも何もないしラクロスを教えてくれる人もいなかったから、ひたすら壁当てか1on1しかしていなかったです。コーチとしてOBの秀さん（城西大学HC 中澤秀行さん）がいたのですが、何も口出しすることなく自分を自由にやらせてくれたことにはとても感謝しています。ある意味「指導してくれなかったこと」のおかげで自分の自由なプレースタイルが確立されたんだと思います。また秀さんはとにかくラクロスへの愛が強い人でした。接していて、ラクロスの楽しさやスポーツの本質を教えてくれたと感じています。 秀さんのおかげで、小学校以来忘れていた「スポーツが楽しい」という当たり前の感情を思い出すことができました。</span>
+                </div>
+
                 <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">高一の最後に監督が変わって、高二の間ずっとそういう酷い扱いを受け続けて、高三まで？</span>
-                </div>
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">２年生のラクロスライフはどんな感じでしたか？</span>
+</div>
                 <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">背番号はもらったんだけど、試合前のシートノックとかにも入れさせてくれないし、ベンチにも行かせてくれなかった。俺、ずっとブルペンキャッチャーをやってるみたいな。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">ピッチャーだったんだけど、怪我とか紆余曲折あって野手に転向したのね、俺。高二の終わりあたりかな。野手に代わって、誰よりも練習した。普通、豆ができて潰れて、また潰れて膿が溜まるくらい。背番号はなんとかもらえたんだよ。20人枠には入れた。でもレギュラー番号は一桁だから、俺は二桁の背番号で。それでも頑張って努力したんだけど、嫌われてたから最後の大会もベンチに入れず、ずっと「ブルペンキャッチャーやってろ」って言われて。親父が神宮外苑で働いてるんだけど、最後の大会、神宮球場で親父の前でヒットを打てたんだ。最後の試合だけ、代打で出してくれた。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">神宮での最後の試合。それが高校野球の最後になったんだけど。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">スタメンじゃなかったけど、代打で出たと。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">そう、最後になんとかもぎ取って。親父の前でヒットを打って引退。その時、動画を撮ってくれてたんだけど、俺がヒットを打った瞬間に動画の中から親父の「よし！」っていう声が聞こえたのね。それを聞いて、泣きそうになった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">野球は絶対にもうやらないと思った。付属校だから、そのまま大学に上がったって感じだね。スケボーにハマって。今までチームスポーツで勝ち負けがつく世界にいたけど、スケーターって自由だし、路上のアートというか、芸術的な表現みたいな感じがして、それに惹かれたんだよね。小学校から10年ちょっと続けていた野球というチームスポーツが一気になくなって。どんなにスケボーが楽しくても、どんなに怪我をしても、ずっと心に穴が空いている感じがしてた。嫌いと言いつつ10年間本気でやってたから、喪失感がエグくて。そのモヤモヤした喪失感を抱えながらスケボーをやってたけど、スケボーではその穴を埋められなかった。スケボーは楽しかったけど、夜中に滑って、昼間寝て夜遊びまくるみたいな生活リズムだったから。「本当にこれでいいのか」ってずっと思ってた。野球と同じくらい熱中できるものではなかったんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">そこでラクロス？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">ヤマダに「ラクロス始めろ」って言われてたけど、最初は興味なかったんだよ。でも、大学の課題を見せてもらえないのはヤバいから、「週一の朝練だけ行くわ」って言って。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">課題のために（笑）。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">夜勤バイトの合間に、昼間公園でボールを投げたりはしてた。ヤマダに「行く」って言ったことは守らないとなと思って。そしたら、グラウンドでラクロスをやってる人がいたの。当時は分からなかったけど、たぶん上手いんだろうなっていう人が。それが、後の小野（オノ）さん。小野寛樹さん。小野さんが練習してて、近くにいたおじいちゃんみたいな人が小野さんに向かって「あの子に教えてあげなよ」みたいに言ったのね。その時、なぜかめちゃくちゃ腹が立ったんだよね。「教えてもらう」っていうことに。それでヤマダに連絡して、「俺、ラクロスガチでやるわ。今週中に日本一目指す」って言った。心に空いてた穴がパカッと埋まったんだよ。ラクロスに夢中になれたから。本当にラクロスに救われたんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">ラクロスに救われたんだね。そこからはどういう生活になったの？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">ずっとラクロスだけをやってた。小峰（コミネ）はもともとやってたのを知ってたから。小峰にちょっと教えてもらって。小峰の練習時間が俺の中での「普通」だと思ってたから、その倍はやらないとと思って、めちゃくちゃ練習した。このスポーツで日本一の選手になりたいと思ったんだ。かつて小学生の頃はプロ野球選手になりたいっていう夢があったけど、そこから夢もなく過ごしてきて。もう一回、夢を見てたんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">大学一年の2月くらいから本気でやり始めて、二年生になると。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">二年生になると……俺が嫌いなグループがあったんだけど、そこに属してたのが関根小太郎（セキネ・コタロウ）。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">でも、城西大学のストーリーを作りたかったんだよね。漫画みたいなシンデレラストーリー。だから仲間集めを本気で頑張った。</span>
-                </div>
-                <!-- 記事中画像2 -->
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">5月にあったあすなろカップは自分が初めて出た試合でしたが、慶應武蔵合同チームとやって何もできず、オフェンス時間も全然なくてボコボコに負けました。その時初めて他大学のラクロッサーと連絡先を交換して、それが小川豪（ADVANCE）でした。豪が覚えているかわからないけど笑<br>8月のリーグ戦は玉川と合同で出場しました。神奈川戦で、当時から無双していた箱崎蒼太選手（Grizzlies）にボコボコにされて悔しかったことが一番印象に残っています。合同とはいえリーグ戦に出場できたことは嬉しかったですが、それ以上に何もできなかったことが悔しくても、それでより一層ラクロス熱が入っていった感じです。<br>またリーグ戦の終了後の関東オールスター戦に出場したのですが、そこでマッチアップした袖山朋弥さん（FALCONS）にずっと1on1を仕掛けて、ボコボコにされ続けたことも印象に残っています。マジでその時、本当に手も足もでず1ミリも通用しなかったので衝撃でした。「世界広すぎだろ」「俺、このままじゃダメだ」ってなったきっかけにもなりました。ボコボコにされて悔しすぎて、試合が終わった後に袖山さんに連絡先を交換してもらって、武者にも何度か伺いました。</span></div>
+
+                    <div class="article-content">
+                <!-- 導入画像 -->
                 <div class="article-image">
-                    <img src="images/column_shimizu/IMG_1400.JPG" alt="清水選手 横顔">
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">二年の終わりくらいにはどんな感じだった？人数的に。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">ちゃんと練習に来るやつで、10人いかないくらいかな。8人とか10人くらい。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">二年の時のメンバーはそんな感じか。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">小峰がアンダー（U-19等）の日本代表だったんだよね。それがめちゃくちゃ悔しかった。始めたばかりでめちゃくちゃ下手なのに、なぜかめちゃくちゃ悔しくて。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">二年生は着々と人数が増えていって、練習はどんな感じでやってたの？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">秀さんがいたけど、ノウハウも何もないから。俺もラクロスを教わる人がいなかったから、ひたすら壁当てか1on1しかしてなかった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">個人技術のことしかできることが分からなかったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">誰も教えてくれなかったからね。でも、秀さんは俺を自由にやらせてくれた。秀さんに一番感謝しているのは、ある意味「指導してくれなかったこと」なんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">それがデカかったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">秀さんはラクロスへの愛が強かった。接していて、ラクロスの楽しさやスポーツの本質を教えてくれたと感じてる。先生っていうよりは、一緒に話していて感じるような。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">秀さんのおかげで、スポーツの楽しさを思い出したんだね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">小学校以来忘れていた「スポーツが楽しい」という感情を思い出させてくれた。秀さんの関わり方のおかげだね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">アスナロは俺が初めて出た試合なんだけど、慶應と武蔵の合同チームとやって。何もできず、オフェンス時間も全然なくてボコボコに負けたんだけど。その時初めて他大学のラクロッサーと連絡先を交換したのが、小川剛（ゴーちゃん）。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">そんな関係だったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">向こうは覚えてるかわからないけど、俺が初めて連絡先交換したのはゴー。まあ、そのエピソードも書いておいて。でもゴーがバイキングス辞めちゃったからな。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">書いておくよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">二年生の時、リーグ戦は出たの？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">出たよ。箱崎（ハコザキ）がいた時。3部でボコボコにされて悔しかった。でも、リーグ戦に出たこと自体は、自分の中ではそこまで大きな思い出ではないかな。ただ、それで一層熱が入ったっていう感じだね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">あ、待って。2年生の頃、あれだわ。俺、オールスターに出てるわ。リーグ戦が終わってから、関東オールスターみたいなやつ。各チームから1人選ばれるからね。あったあった、覚えてるわ。そこで袖山さんにずっと1on1を仕掛けて、ボコボコにされた話。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">ああ、そうか。袖山さんが4年生の時か、学芸大の。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうそう。で、マジでその時、1ミリも攻撃できなくて「世界広すぎだろ」って思った。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">「俺、このままじゃダメだ」ってなったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">なったけど、より熱が入るイベントが多いなと思った。絶対に勝ちたいと思ったから。あまりにもボコボコにされたから、「これ、絶対いつかやり返してやる」と思って。で、試合終わりに袖山さんに「学芸の武者（武者修行）に行っていいですか？」って聞いて。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">おお、いいじゃん。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">その後、学芸に武者修行に行って、6on6の時に1回だけ裏まくりで抜いて。それがめちゃくちゃ嬉しかったっていう記憶がある。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">なるほどね。あ、待って、録画してなかった。録画しとこう。危ない危ない。はい、オッケー。で、1回は勝ったんだな。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">そうそう。ボコボコにされて悔しすぎて、「絶対抜く」っていう気持ちで。試合が終わった後に学芸の袖山さんに連絡先を交換してもらって、行っていいですかって聞いて。実際に行って、6on6で1回まくったって話ね。その後だけど、武者修行に行き始めた。袖山さんとの出会いで世界の広さを知って、「世界の壁」を知りたいと思った。本当に手足が出なかったから。マジで何もできなかったんだよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">マジで何もできなかったんだな。そこは強調しとくわ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">覚えてるよ。ちなみに、それ以降は袖山さんと関係性はあるの？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">あんまりないかな。特になし。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">3年生の4月からね。特にリーグ戦までは、ひたすら練習をやってたって感じだね。新入生については、3年生になってようやく単独チームで出られる人数が揃ったんだよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">そうだね、ようやく単独で出られるようになったね。じゃあ、その2年の終わりくらいから新歓は頑張ってたってこと？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">まあ、ぼちぼちだね。そこは俺が2年生の時の新歓ほどの熱量はなかったかな。でもなんだかんだ5人くらい入ってくれて、それでギリギリ人数が足りたんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">はいはい、じゃあ5人入ってようやく単独で出られることを確定させて、7月からはガッとギアを上げたと。そのリーグ戦までの期間はどういうマインドだった？去年の2年生の時に初めてリーグ戦に出て、あんまり悔しい思いをしたわけじゃない。で、いよいよ3年のリーグ戦。
-                        俺、1年みんなより遅く始めた分、ラクロスに本気で取り組まなきゃいけないと思って。人よりも時間を取らなきゃいけないから、バイトを辞めたんだよね。本当にラクロスだけをするようになった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうそう。で、3年のリーグ戦。初めて単独で出られる年。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">城西として出られた嬉しさみたいなのはあった？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">そこはもう何も考えてなかった。とりあえず俺は去年の悔しさがあったから、「俺が活躍するんだ」っていう気持ちだけだった。出られること自体に対しては何も思ってなかったんだよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">そうなんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">「伝説を作る」のと、自分が「ナンバーワン」になるのが目標だったから、全く何も思わなかったんだよね。だから合同チームでやってる時と、気持ちは特に変わらずってこと。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">なるほどね。後輩との関わり方で特筆すべきことは？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">後輩との関わり方は、今でもめちゃくちゃ反省してるんだけど、自分の熱量が周りにないことが許せなかったの。自分が頑張ってる分、許せなくて。後輩への当たりはきつかったと思う。今思えばね。特にやる気がない人への当たりは強かった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">まあ、それも大事な出来事ではあるな。今思えば。後輩に厳しくしつつ、なんとか3年のリーグ戦まで来ましたと。いよいよ単独出場。3年は長かった？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">3年ね……リーグ戦、マジで何もできなくて。千葉戦は楽しみすぎて、というか「やってやろう」っていう気持ちが強すぎて、寝ずに壁当てをしてたんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">夜中まで壁当てやって寝られなかったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">朝日が昇る前からずっと壁当てしてた。そしたらその時、気温がめちゃくちゃ暑くて熱中症になっちゃって。OS-1も口に入らない状態でラクロスをやって、千葉戦に負けた。ボコボコにされて、「やっぱり俺は何もできないじゃないか」と思ったんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">「何も変わってないじゃん」と思って悔しすぎて涙が出てきたんだ。でも帝京大学戦で、単独出場として初めての1勝を挙げたんだよね。。でも帝京戦で単独初勝利を挙げたと。だけど、その試合で自分は何もできなかった。俺がラクロスを始めた期間の中では、俺が一番ラクロスに取り組んでいる自信があったから。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">一番取り組んでいた自信があったからこそ、何もできなかったことが本当に悔しかったんだよね。だから、チームでの勝利も全く嬉しくなかった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">初勝利なのに、なるほどね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">悔しすぎて泣いてたら……これも大事なんだけど、臨海公園の駐車場のエレベーター、あの長い坂道を下って駐車場の道路の脇で泣いてたら、親が通りかかったんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">初めて勝ったのに、全く嬉しくない。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">3戦目とかは？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">3戦目どこだっけ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">インスタの投稿が飛んでるわ。駒澤は最後かな。大東があるな。大東文化大。江戸川臨海での大東戦、何か思い出ある？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">負けちゃうんだよね、確か。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">いや、4対3で勝ってるよ、お前ら。2023年の3年の時。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">まあ嬉しかったけど、点取ったかあんまり覚えてないな。自分が思うような活躍ができていなかったから、期待値を超えられていなかったんだよね。だからあんまり印象にない。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">満足できなかったんだ。じゃあ今のところ、まだ1試合も満足できてないな、3年生は。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">うん。で、次が駒澤。1対5で負けてる。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">その1点は俺が決めたけど、それも別に嬉しくなかった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">なんで？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">自分が一番やってるのになんで結果が出ないんだろうって。もっと取れるはず、もっと活躍できるはずだと思ってたから。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">なるほどね。で、終わりか。4試合しかないのか。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">もうなかったっけ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">それで終わっちゃったんだ。1試合目は楽しみすぎて寝られなくて熱中症、2試合目は準備していったけど活躍できず、でもチームは初勝利。泣いてたら親が通りかかった事件があって。3試合目、4試合目は思い出がないくらい、期待したような活躍じゃなかったから、結局悔しいまま終わってしまったと。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">終わっちゃったね。意外と早かった。試合が少ないからな。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">3年のリーグ戦が終わった後は、悔しいだろうけど、何かあった？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">遠征してました。鹿島オープンで優勝しました。ヒデさんが出たやつ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">いや、それはまだ後だよ。俺らの「小規模甲子園」の方が前だ。鹿島オープンは2月だ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">小規模甲子園って、俺らちゃんとやったっけ？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">多摩川でのことだよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">小規模甲子園、多摩川での出会いもありつつ、2月に鹿島オープンで優勝と。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうだね。鹿島オープン優勝はデカかった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">話しておきたいことある？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">ゴーリーがいなくて。これもちゃんと書きたいんだけど、ゴーリーのセイヤが前日か前々日にテイラー・スイフトのライブに行って、インフルエンザか何かにかかって来られなくなって。で、俺らの代の川崎（ヌイ）っていう、3番目に入ってきたやつが、ゴーリーやったことないのにゴーリーをやって優勝したんだよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">ヒデさんは？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">ヒデさんは怪我したんだよね。試合じゃなくて、クリニックで前十字（靭帯）か何かをやって。車椅子だったもんね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">あいつは何してるの？……まあいいや。で、鹿島オープンはデカかったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">どういう意味でデカかったの？個人としてもいい感じだった？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">個人でもMVPをもらった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">マジか、それはデカイわ。ようやく自分の思い描いていたようなプレーができて、結果も出たと。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうそう。そこは結構デカイ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">特筆すべきエピソードは……あ、俺らが遊びに行ったな、城西に。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">行ったね。いつだっけ？寒かったよね。V-Kの練習に何回か参加したんだよね。俺らが出会った頃、小規模甲子園の時期。そこでタイガさんがよくしてくれて。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">なんでV-Kを選んだの？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">タイガさんが優しかったから……いや、順番が逆か。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">タイガさんと出会ってなかったらV-Kに行ってないでしょ。武者修行に行った理由は？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">ひたすらいろんなところに行ってたから。TLとかも行ってたし。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">武者修行に行きまくってたわけだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうそう。その中で特にV-Kのタイガさんっていう人が優しくしてくれて、お世話になった。上智の試合とかも見に来てくれたりしたんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">へえ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">まあいいや。で、4年生。リーグ戦まではもう何もない？一生懸命やってるくらい？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">壁当てを、目眩がするくらいまでやってた。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">やりすぎだろ（笑）。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">目眩がするまでやったり、テーピングに血が滲むくらい壁当てしたり。画像もあるから。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">3年で結局リーグ戦であんまり活躍できなくて、鹿島オープンで結果が出て、「4年はやったろう」みたいな感じだったんだね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうだね。4年はマジで気合が入ってた。「マジでやるしかない」と思ってたから。で、また誰よりも努力していると。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">あと、武蔵とは4年の6月に試合してるんだよね。練習試合。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">アクラ（アミノバイタルフィールド）で？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">負けたんだけど、確か7対4かな。負けたけど、俺2点取れたんだよ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">ほう。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">だから「意外と戦えるな」と思って。1部相手に。まあ武蔵も怪我人が多かったみたいだけど。1部相手にこれだけやれるんだから、埼玉大には勝てると思ってたんだよね、初戦は。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">誰よりも努力していると思ってるんだ。うわ、本当だ、お前えぐいくらい血がついてるな。4年のリーグ戦、思い出せることある？1試合目はどこだっけ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">埼玉大。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">埼玉大、5対7で負けてるね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">この試合は、マジで負けられなかった。埼玉大には鹿島オープンの決勝で勝ってたんだよね。だから負けられないと思ってた。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">チームとしては2部昇格を目指してたの？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">もちろん目指してた。3年の時よりもガチで目指してた。リーグの組み合わせ的にも埼玉大には勝たなきゃいけないと思ってたわけか。初戦から勝利して、いい勢いで持っていきたいと思ってたんだよね。けど負けちゃった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">この試合は何かある？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">特に負けて悔しいってこと。本当に絶対に勝たなきゃいけない試合だった。だけど、自分一人じゃ何もできなかったんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">そうなんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">切り替えるしかないか。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">でも、負けたことよりも自分が活躍できなかったことの方が悔しかったんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">で、次が関東学院。13対5でボロ勝ちしてる。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">上智戦は、2部に行くにはもう負けられない状況で。俺が先制点を取るんだよ。相手の応援がすごくて、チアとかも来てた。1点目決めて先制して、「ここから流れ持ってくるぞ」って。ブレイクの時に得点したんだよね。その勢いをチームにつけようと思ったし、実際につけた。だけど負けて、2部昇格が現実的じゃなくなったんだよ。2敗したから。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">悔しすぎてロッカールームで膝から崩れ落ちたんだっけ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">うん。自分が活躍できた分、余計に悔しかった。それまでは「自分が活躍すること」が目的だったけど、この試合は勝たせなきゃいけなかった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">そうだね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">いくら自分が活躍しても勝てない。結局チームでやるスポーツなんだって。それまでは俺一人が頑張って、俺が上手くなることばかり考えてたし、「自分くらいやる気がないやつはなんなんだ」と思ってた。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">わがままにやってたとも言えるね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">だけど、他の人からしたら、自分もただ好きなようにしてるだけ。その人もその人の好きなようにやってる。それじゃチームじゃないと思って。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">部活になりきれてなかったんだ。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">2部昇格がなくなったから、それ以降は「楽しくやること」にフォーカスしたんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">次は大東文化大。4対5で負けてる。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">大東戦はまだ楽しめきれてなかった。シフトチェンジができていなかったんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">上智戦の5日後だもんね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そう、切り替えきれなかった。で、負けて「これじゃ変わってない」と思って、完全にシフトチェンジして臨んだのが日大戦。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">7対2でボコボコにしてるね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">めちゃくちゃ楽しんだんだよ、その試合。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">あの角度のない、0度からのショットね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">ヤマダもロングで決めた。俺も長距離からワンバンで決めて。めちゃくちゃ楽しんで勝って、「大学でやるラクロスの真髄はこれだ」と思ったんだよね。スポーツの楽しさ、みんなでやる楽しさがわかった。今まで共にしてきた仲間とやる楽しさが、マジで楽しくてしょうがなかった。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">上智戦をきっかけに楽しさの方に方向転換したけど、それまでもラクロスが嫌いなわけじゃなかったんだよね？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">全然嫌いじゃない、好きだよ。俺を救ってくれたんだもん。でも、楽しさはなかった。好きかも怪しかった。「やるんだ」っていう、怒りがモチベーションだったから。活躍できない自分や、周りへの怒り。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">やりたくてやってるけど、「やらなきゃいけない」と思ってたってこと？</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうだね。好きという気持ちよりも「やらなきゃいけない」が頭を占めてた。それが一番正しい表現。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">けど上智戦があって、それが吹っ切れた。で、最後が成城大戦。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">成城は2部昇格を確定させてたんだよね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">3対3の同点だったね。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span
-                        class="dialogue-text">楽しんでたから、終わった時の喪失感が大きかった。「これで引退か」って。2部を決めてた成城相手に同点まで行けるなら、埼玉大に勝っておけば……とか、俺の立ち回り次第でこうなったのか、とか考えたり。</span>
-                </div>
-                <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span class="dialogue-text">で、オールスター。 今度のオールスターは、チームから1人とかじゃなくて、普通に選ばれたんだよね。3部のベストテンに選ばれて。</span>
-                </div>
-                <!-- 記事中画像4 -->
+                    <img src="images/column_shimizu/sodeyama.JPG" alt="">
+                </div>
+<div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">３年生はどんな感じでしたか？</span>
+</div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">引き続き新歓を頑張って、ようやく城西大学単独チームで出られるだけの人数が揃ったのはよかったです。このまま今年3部から2部に昇格して、来年2部から1部に昇格する、っていうストーリーがいよいよ現実にできるんだと意気込んでいました。ただとりあえず自分は去年のリーグ戦での悔しさがあったので城西単独で出られる嬉しさよりも、「俺が活躍するんだ」っていう意気込みの方が大きかったです。この辺りからよりラクロスに本気で取り組まなきゃいけないと思って、バイトも辞めてラクロス一本に絞りました。<br>ただこの頃からの後輩への関わり方は、今でもめちゃくちゃ反省しています。自分のラクロスへの熱量を周りにも求めてしまっており、周りが自分と同じくらい本気でラクロスに向き合ってないということが許せなくて正直後輩へ強く当たってしまうことも多かったです。</span> </div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">３年生のリーグ戦について教えてください。
+</span> </div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">開幕戦は千葉戦でした。前日夜から去年の悔しさもあって、絶対にやってやろうっていう気持ちが溢れていました。興奮しすぎてあまり寝られず、当日は朝日が昇る前からずっと壁当てをしていました。ですが当日気温が高く寝不足もたたって試合中に熱中症になってしまい、試合そのものに全然参加できなかったです。結局試合もボコボコにされてしまい、悔しすぎて泣いてしまったのを覚えています<br>2戦目の帝京大学戦では、単独出場としての初めての1勝を挙げることができました。ただこの試合でも自分は何もできなかったです。誰よりも一番取り組んでいた自信があったからこそ、何もできなかったことが本当に悔しくてチームとしての記念すべき初勝利も全く嬉しくなかったです。臨海公園の道路の脇で泣いてたら、親がたまたま車で通りかかって慰めてくれました。<br>3戦目の大東文化大も勝利したのですが、やはり活躍できず、次の駒澤戦では初得点を取ったのですが、1-5で負けてしまいました。結局リーグ戦はこれで終了となり、４試合1得点と散々な結果で終わってしまいました。自分が一番やってるのになんで結果が出ないんだろう、もっと取れるはず、もっと活躍できるはずだという気持ちで悶々としていました。<br>ただリーグ戦が終わった後に参加した鹿島オープンで優勝することができたのは大きかったです。チームとしての優勝はもちろん、個人でもMVPを受賞することができました。ようやく自分の思い描いていたようなプレーができて、チームとしての結果も出せたという意味で非常に重要な機会だったと思います。それから新シーズンまではVIKINGS含め社会人チームの練習に何度か参加したりと自分の視野を広げる時期にしていました。特にVIKINGSの大賀さん（山上大賀さんVIKINGS #14）には優しくしていただいたので、そんなご縁もあり後にVIKINGSに入団することになります。</span></div>
+
+                    <div class="article-content">
+                <!-- 導入画像 -->
                 <div class="article-image">
-                    <img src="images/column_shimizu/IMG_1407.JPG" alt="表彰式で笑顔を見せる清水選手">
+                    <img src="images/column_shimizu/kashima.JPG" alt="">
                 </div>
                 <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">まあ、当たり前だと思う。これだけやってきたんだから。</span>
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">4年生のリーグ戦についても教えてください。</span></div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">とにかくリーグ戦までは壁当てをやりまくってました。テーピングに血が滲むくらい。意気込んだ3年のリーグ戦で結局あんまり活躍できなくて、その後の鹿島オープンで結果が出たこともあって、今年こそは絶対に活躍してやると強い思いを持っていました。個人としてもリーグ戦前の練習試合の武蔵大学戦で2点取ることができたので、1部相手にこれだけやれるんだからいけるだろう、とより自信が増していました。<br>リーグ戦の初戦は埼玉大学戦でした。埼玉には鹿島オープンの決勝で勝っていることもあったし、ブロックの組み合わせ的にもこの試合に負けてしまうと昇格が遠のくという大一番だったので、絶対に負けられない試合でした。しかし5-7で負けてしまい、いきなり苦しい立ち上がりになりました。<br>落ち込む暇もなく次戦の関東学院戦では大勝し、3戦目の上智戦を迎えました。2部昇格のためには絶対に負けられない状況でしたが、この試合は自分が1点目を決めて、さらにチームを勢いつけるブレイクの時に得点も決めたのですが、終盤に巻き返されて逆転負けを喫しました。今までと違って自分が活躍できた分、チームが負けて2部昇格が潰えたことが余計に悔しかったです。俺一人が頑張って、俺が上手くなることばかり考えてたし、「自分くらいやる気がないやつはなんなんだ」と思っていましたが、この敗戦を経て自分がわがままな人間だったとようやく気づきました。それと同時にチーム全体としてもただ各々が各々の好きなやりたいことをやってるだけで、チームとしての強さを作れなかったことにも気づきました。部活というよりサークルに近い状態だったのかもしれないです。</span></div>
+
+                    <div class="article-content">
+                <!-- 導入画像 -->
+                <div class="article-image">
+                    <img src="images/column_shimizu/kaishin.JPG" alt="">
+                </div>
+                        
+                    <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">2部昇格がなくなってからは、練習もチームとしても一体感を持って楽しくやることにフォーカスして取り組みました。そうやってシフトチェンジして臨んだ日大戦では7対2で勝利し、個人としても華のあるプレーを連発して活躍することができました。ラクロスの楽しさが一番感じられた試合だったと言い切れます。<br>引退試合となった成城戦は3対3の同点でした。成城はすでに2部昇格を決めていたので、成城相手に同点まで行けるなら、埼玉大に勝っておけば……とか、自分の立ち回り次第で違う結果にできたのかな、とか試合後は複雑な気持ちでしたし、４年間本気で打ち込んだ学生ラクロス引退という喪失感は大きかったです。引退後もラクロスは続けるつもりだったので、その後は学生時代にお世話になった大賀さんがいるVIKINGSに入ることにしました。</span></div>
+
+                <div class="article-content">
+                <!-- 導入画像 -->
+                <div class="article-image">
+                    <img src="images/column_shimizu/kabeate.JPG" alt="">
                 </div>
                 <div class="dialogue">
-                    <span class="dialogue-speaker speaker-a">A:</span>
-                    <span
-                        class="dialogue-text">2〜3点決めて。でも、自分がやりたかったラクロスと、指示されて強制されるラクロスとのギャップで、バッドな気持ちが増えてきたところで、カナダ挑戦……という流れ？</span>
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">社会人ラクロスに触れたこの一年を振り返ってください。</span> </div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">基本的には朝4時半とかに起きて筋トレをして、仕事から帰ってきたら壁当てみたいな生活でした。ラクロスに触れない日は基本なくて何かしら壁当てなり筋トレなりやってました。<br>ただVIKINGSでのラクロス経験は正直挫折というか、自分がやりたかったことと違っていて、続けながらもどこかモヤモヤした気持ちがありました。今までちゃんとしたラクロスの戦術とかを知らないままやっていたので、社会人チームで６人で点を取るための戦術とかを求められるようになった時に、自分の個性である1on1の勝負とか自分がやりたいプレーみたいのがどうしても少なくなってしまうことがやっぱり嫌だったんだと思います。わがままですが。ある意味で、やっぱり自分は自分のフィールドで勝負したいと再確認するための良い機会であったとも思いますし、こういう気持ちも相まって、よりカナダ挑戦といった目標も段々と固まって来たんだと思います。そして何よりラクロスをやってなかったら絶対に人生で関わることのなかった大学の人たちとも繋がることができたのは大きな財産だったと思っていて、VIKINGSに入団したことに全く後悔はないです。</span> </div>
+
+                    <div class="article-content">
+                <!-- 導入画像 -->
+                <div class="article-image">
+                    <img src="images/column_shimizu/zasetsu.JPG" alt="">
                 </div>
                 <div class="dialogue">
-                    <span class="dialogue-speaker speaker-b">清水:</span>
-                    <span class="dialogue-text">そうね、うまく言語化できないけど。</span>
-                </div>
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">カナダ挑戦を明確に意識するようになったのはいつですか？</span> </div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">明確にいつというのは覚えていないですが、boxラクロスのリーグが開幕して参加してみたりする中で、自分のプレースタイルにあっているなと感じていましたし、日本一のプレイヤーになりたいとクロスを握ったあの日から思っていたので、必然的にラクロスで突き抜けるためには海外行くしかないやろって思っていたんだと思います。そこにVIKINGSでの挫折もあったりして、いよいよ夏頃に本格的に海外挑戦を決意するようになったと思います。</span> </div>
+                
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">カナダ挑戦をするというモチベーションの根源に来るものはなんですか？</span></div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">一番根源に来るのは、自分の生き様によって他の人にいい影響を与えたい、本気で何かに取り組むことのかっこよさみたいなのを伝えたいという気持ちです。下手くそだった自分が血の滲むような努力を経て、こうやって今カナダ挑戦も狙えるような選手になっていったという様を見て、自分だって努力次第で何にでもなれるんだって思ってほしいし、自分が海外挑戦して、実際に結果を残して見せることでその証明にもなるんだと思います。<br>それと同時に3部でコーチも人数もいない自分ですら、ある程度のところまで来れたという事実がある中で、逆にもっと恵まれた環境でやってる学生たちに対しては限界まで努力できているか？と問いたいです。幸いSNSを通して多くの学生ラクロッサーから技術的なコツを聞かれたり、相談の連絡をもらったりすることも多いのですが、まずは自分の中で言い訳せずに努力を重ねることが大事だと思っているのでそこは忘れてほしくないなと思います。</span> </div>
+
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">松本</span>
+                    <span class="dialogue-text">日本一のプレイヤーになったと言えるのはどういう時だと思いますか？
+</span> </div>
+                <div class="dialogue">
+                    <span class="dialogue-speaker speaker">清水</span>
+                    <span class="dialogue-text">難しいですね。まだ明確に自分の中に計りがあるわけではないので。ただラクロスだけ上手くなった選手になって帰ってこようとは思っていないです。アスリートとしていい影響を与えられる人間になるために、発信活動とかも引き続き頑張りたいと思っているし、当然向こうで学んだことを日本ラクロスに還元したいとも思っています。</span></div>
 
                 <div class="back-btn-container">
                     <a href="column.html" class="back-btn"><i class="fas fa-arrow-left"></i> コラム一覧に戻る</a>
