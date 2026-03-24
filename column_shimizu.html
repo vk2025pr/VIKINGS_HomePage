@@ -20,24 +20,29 @@
             background: #fff;
         }
 
-        .article-header {
-    margin: 0 -20px 30px -20px; 
-    padding: 0 20px 20px 20px;
-    /* 追加：中にあるテキストや要素をすべて中央へ */
+.article-header {
+    margin: 0 -20px 30px -20px;
+    /* 上下の高さを確保しつつ、中身を中央に寄せる */
+    min-height: 150px; /* 任意の高さ（必要に応じて調整） */
+    display: flex;
+    flex-direction: column; /* 要素が複数ある場合、縦に並べる */
+    justify-content: center; /* 垂直方向の中央寄せ */
+    align-items: center;     /* 水平方向の中央寄せ */
+    
+    padding: 5px; /* 上下左右均等な余白に直すと計算が楽です */
     text-align: center; 
 }
 
 .article-title {
-    /* text-align: center; は親にあるので消してもOK */
     font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: #fff; /* 背景色がないと文字が見えない可能性があるので注意 */
+    margin: 0; /* 上下の不要な余白を消すと、より正確に中央に配置されます */
+    color: #fff;
     line-height: 1.4;
     font-weight: bold;
 }
 
         .article-meta {
-            color: #777;
+            color: #fff;
             font-size: 0.9rem;
         }
 
@@ -113,7 +118,47 @@
             background-color: #b81b1b;
         }
 
+    @media (max-width: 768px) {
+    .article-container {
+        margin: 20px auto; /* 上下の余白を縮小 */
+        padding: 0 15px;   /* 左右の余白を少し縮小 */
+    }
+
+    .article-header {
+        /* コンテナのpadding(15px)に合わせてネガティブマージンを調整 */
+        margin: 0 -15px 20px -15px; 
+        min-height: 120px; /* 高さを少し低くする */
+    }
+
+    .article-title {
+        font-size: 1.5rem; /* スマホ画面に合わせて文字サイズを縮小 */
+    }
+
+
+
+    
+
+    .article-content {
+        font-size: 1rem;   /* 本文の文字サイズを微調整 */
+        line-height: 1.6;  /* 行間を少し詰めて視認性を確保 */
+    }
+
+    .dialogue {
+        margin-bottom: 15px;
+    }
+
+    .img-placeholder-article {
+        height: 200px; /* ダミー画像の高さをスマホサイズに縮小 */
+    }
+
+    .back-btn-container {
+        margin-top: 30px;
+    }
+}
+
     </style>
+
+
 </head>
 
 <body>
@@ -148,11 +193,14 @@
     <main class="article-container" style="margin-top: 100px;">
         <article>
             <header class="article-header">
-                <h1 class="article-title">Lax for life　清水大貴のラクロス人生</h1>
-                <div class="article-meta">
-                    <span class="date"><i class="far fa-clock"></i> 2026.03.20</span>
-                </div>
+                <h1 class="article-title">Lax for life</h1>
+                <h1>清水大貴のカナダ挑戦録①</h1>
             </header>
+
+    <div class="dialogue">
+                    <span class="dialogue-speaker speaker"></span>
+                    <span class="dialogue-text">この春からカナダ挑戦に旅立ったVIKINGS#74 清水大貴選手にインタビューを行いました。
+</span></div>
 
             <div class="article-content">
                 <!-- 導入画像 -->
@@ -167,7 +215,7 @@
                 </div>
                                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">外でよく遊ぶ活発な少年でした。幼稚園の時はサッカーと野球をどちらもやっていて、父親と家の前でキャッチボールやバッティングをするのが楽しかったです。小学生からは野球一本に絞り、そこからは小・中・高とずっと野球一筋です。小学校は本当に野球が好きで、やるのが楽しかった記憶しかないです。<br>中学になってからはシニア野球のそこそこ強いチームに入ったこともあり、挫折を経験しました。小学校の頃は自分が一番上手かったので天狗になってた部分があったけど、中学になって上には上がいることを痛感し、結局Bチーム寄りの野球生活でした。この辺りから野球の楽しさは薄れていった感じがします。ちなみに同じチームには小峰拓真（Grizzlies）や関隼也さん（KAWASAKI FALCONS）がいました。
+                    <span class="dialogue-text">外でよく遊ぶ活発な少年でした。幼稚園の時はサッカーと野球をどちらもやっていて、父親と家の前でキャッチボールやバッティングをするのが楽しかったです。小学生からは野球一本に絞り、そこからは小・中・高とずっと野球一筋です。小学校は本当に野球が好きで、やるのが楽しかった記憶しかないです。<br>中学になってからはシニア野球のそこそこ強いチームに入ったこともあり、挫折を経験しました。小学校の頃は自分が一番上手かったので天狗になってた部分があったけど、中学になって上には上がいることを痛感し、結局Bチーム寄りの野球生活でした。この辺りから野球の楽しさは薄れていった感じがします。<br>ちなみに同じチームには小峰拓真（Grizzlies）や関隼也さん（KAWASAKI FALCONS）がいました。
 </span>
                 </div>
                                 <div class="dialogue">
@@ -186,7 +234,7 @@
                 </div>
                                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    ・<span class="dialogue-text">地獄の３年間でした。入学当初こそ周りのレベルを見た感じ、自分がエースになれるものだと思えるくらいの状況であったし、もしかしたら大学も野球で行けるかも、くらいに思っていました。しかし高一の終わりの監督交代があって、そこで新しい監督にめちゃくちゃ嫌われてしまい、地獄が始まりました。新監督になって一日目の練習の日、投球練習が終わってアイシングをしてた時に、「まだ練習は終わってねーだろ」ってめちゃくちゃ怒られ罰走させられて、その日からとことん嫌われてしまった感じです。全国で俺が一番監督に嫌われたんじゃないかっていう自負があるくらいには、嫌われていました。今でもなぜ自分があれほど明確に嫌われたのか、本当にわからないままです。試合前の練習にもベンチにも入らせてもらえない、みたいな扱いがずっと続いていました。このままじゃ高いお金を払ってくれている親に合わせる顔がないと思い、ここで腐ったら終わりだなと思ってなんとか自分を奮い立たせながら続けていました。<br>高二の終わりにはピッチャーから野手に転向して誰よりも練習しました。それでも引退が迫る最後の大会もなかなかベンチに入れさせてもらえなかったのですが、（結果的に引退試合となった）大会の最終戦で代打の出番をなんとかもぎ取ってヒットを打つことができました。この試合は神宮球場で開催されていたのですが、実は親父が神宮外苑で働いており、最後の最後に親父の前でヒットを打って引退できたことはとても嬉しかったです。撮られた動画の中に親父の「よし！」っていう声があって、それを聞いて泣きそうになりました。<br>これで高校野球も引退となりましたが、あまりに辛かった３年間だったのと酷使した肘の怪我もあって、大学ではもう野球は絶対にもうやらないと決めていました。大学は高校の付属校ということもありそのまま上がった感じです。
+                    <span class="dialogue-text">地獄の３年間でした。入学当初こそ周りのレベルを見た感じ、自分がエースになれるものだと思えるくらいの状況であったし、もしかしたら大学も野球で行けるかも、くらいに思っていました。<br>しかし高一の終わりの監督交代があって、そこで新しい監督にめちゃくちゃ嫌われてしまい、地獄が始まりました。新監督になって一日目の練習の日、投球練習が終わってアイシングをしてた時に、「まだ練習は終わってねーだろ」ってめちゃくちゃ怒られ罰走させられて、その日からとことん嫌われてしまった感じです。全国で俺が一番監督に嫌われたんじゃないかっていう自負があるくらいには、嫌われていました。今でもなぜ自分があれほど明確に嫌われたのか、本当にわからないままです。試合前の練習にもベンチにも入らせてもらえない、みたいな扱いがずっと続いていました。<br>このままじゃ高いお金を払ってくれている親に合わせる顔がないと思い、ここで腐ったら終わりだなと思ってなんとか自分を奮い立たせながら続けていました。<br>高二の終わりにはピッチャーから野手に転向して誰よりも練習しました。それでも引退が迫る最後の大会もなかなかベンチに入れさせてもらえなかったのですが、（結果的に引退試合となった）大会の最終戦で代打の出番をなんとかもぎ取ってヒットを打つことができました。この試合は神宮球場で開催されていたのですが、実は親父が神宮外苑で働いており、最後の最後に親父の前でヒットを打って引退できたことはとても嬉しかったです。撮られた動画の中に親父の「よし！」っていう声があって、それを聞いて泣きそうになりました。<br>これで高校野球も引退となりましたが、あまりに辛かった３年間だったのと酷使した肘の怪我もあって、大学ではもう野球は絶対にもうやらないと決めていました。大学は高校の付属校ということもありそのまま上がった感じです。
 </span>
                 </div>
                   <div class="article-image">
@@ -198,8 +246,7 @@
                 </div>
                                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">大学生活の最初の方はスケボーにハマりました。今まで野球という勝ち負けがはっきりするスポーツしかやっていなかったので、逆にスケボー界隈の自由な感じとか、表現みたいものにすごく惹かれたんだと思います。それでもどんなにスケボーをやっても、なんとなく心に穴が空いている感じがしていました。野球が無くなり何もすることがなく、悔しさも、楽しさも、何かに向かう気もなくなり、今までずっと感じでいた感情がなくなり、ずっと心に穴が空いた感じてした。何をしても満たされない状態でした。そんな感じでモヤモヤした喪失感を抱えながらスケボーをやっており、本当にこれでいいのかってずっと思っていました。スケボー自体は楽しいけど、野球と同じくらい熱中できるものではなかったですね。<br>そんな感じで1年生の終わり頃までなんとなく過ごしていたのですが、たまたま高校からの友達だった山田（城西大学の主将）がラクロスを始めるというので、誘われて一緒にやることになりました。最初は全然興味なかったのですが、練習に来ないと大学の課題を教えないというので、週一の朝練だけ行くという約束で始めました。とりあえず未知のスポーツだったのと、山田との約束も守らないといけないと思って、なんとなくクレードルから練習してみようと思い近くの公園に行きました。（当時は春休みということもあり夜勤バイトを２週間連続で毎日入れていたので昼に行ってました）そしたらそこでラクロスをやってる人がいて、当時は分からなかったけど、それが小野紘輝さんでした。遠くから彼の練習を見ていて、シンプルに上手くて、自分も小野さんみたいに上手くなりたい、この人を超えて一番になりたいとか思い始めました。その時になぜかわからないけど下手くそな自分にめちゃくちゃ腹が立ってきました。クロス握ったばかりの人間なので当然当時は下手くそなのですが、そんなことも差し置いてめちゃくちゃ悔しくなってしまって、すぐに山田に電話して、「俺、ラクロスガチでやるわ。絶対に日本一目指す」って宣言して、切りました。山田も当時は困惑したと思います（笑）。でもあの瞬間スイッチが入って、俺は日本一のプレイヤーになるんだと誓いました。そこからはスケボーも夜勤バイトもやめて、狂ったようにラクロスにのめり込み始めました。ただラクロスをするのが好きでしょうがないという毎日でした。野球が無くなってぽっかりと空いた心の穴を埋めてくれるのはこれだ！って運命的な出会いを感じたんです。（それと同時に野球をしていた時間がどれだけ自分にとって大きなものだったかも気づきました）。小峰もラクロスを始めたというのもちょうど知っていたので、教えてもらったりしながら練習していました。彼は当時からすでに飛び抜けて上手かったので、彼の倍は練習しなきゃと思って、とにかくめちゃくちゃやり込みました。
-                    日々の基本的に２個上の先輩だったイブさん（斉藤伊吹さん）と自分と山田の３人しかいなかったのですが、少し後には同期の川崎琉一も加わって、4人で練習していました。
+                    <span class="dialogue-text">大学生活の最初の方はスケボーにハマりました。今まで野球という勝ち負けがはっきりするスポーツしかやっていなかったので、逆にスケボー界隈の自由な感じとか、表現みたいものにすごく惹かれたんだと思います。<br>それでもどんなにスケボーをやっても、なんとなく心に穴が空いている感じがしていました。野球が無くなり何もすることがなく、悔しさも、楽しさも、何かに向かう気もなくなり、今までずっと感じでいた感情がなくなり、ずっと心に穴が空いた感じてした。何をしても満たされない状態でした。そんな感じでモヤモヤした喪失感を抱えながらスケボーをやっており、本当にこれでいいのかってずっと思っていました。スケボー自体は楽しいけど、野球と同じくらい熱中できるものではなかったですね。<br>そんな感じで1年生の終わり頃までなんとなく過ごしていたのですが、たまたま高校からの友達だった山田（城西大学の主将）がラクロスを始めるというので、誘われて一緒にやることになりました。最初は全然興味なかったのですが、練習に来ないと大学の課題を教えないというので、週一の朝練だけ行くという約束で始めました。<br>とりあえず未知のスポーツだったのと、山田との約束も守らないといけないと思って、なんとなくクレードルから練習してみようと思い近くの公園に行きました。（当時は春休みということもあり夜勤バイトを２週間連続で毎日入れていたので昼に行ってました）そしたらそこでラクロスをやってる人がいて、当時は分からなかったけど、それが小野紘輝さんでした。遠くから彼の練習を見ていて、シンプルに上手くて、自分も小野さんみたいに上手くなりたい、この人を超えて一番になりたいと思い始めました。その時になぜかわからないけど下手くそな自分にめちゃくちゃ腹が立ってきたんです。クロス握ったばかりの人間なので当然当時は下手くそなのですが、そんなことも差し置いてめちゃくちゃ悔しくなってしまって、すぐに山田に電話して、「俺、ラクロスガチでやるわ。絶対に日本一目指す」って宣言して、切りました。山田も当時は困惑したと思います（笑）。でもあの瞬間スイッチが入って、俺は日本一のプレイヤーになるんだと誓いました。そこからはスケボーも夜勤バイトもやめて、狂ったようにラクロスにのめり込み始めました。ただラクロスをするのが好きでしょうがないという毎日でした。野球が無くなってぽっかりと空いた心の穴を埋めてくれるのはこれだ！って運命的な出会いを感じたんです。（それと同時に野球をしていた時間がどれだけ自分にとって大きなものだったかも気づきました）。<br>小峰もラクロスを始めたというのもちょうど知っていたので、教えてもらったりしながら練習していました。彼は当時からすでに飛び抜けて上手かったので、彼の倍は練習しなきゃと思って、とにかくめちゃくちゃやり込みました。<br>日々の基本的に２個上の先輩だったイブさん（斉藤伊吹さん）と自分と山田の３人しかいなかったのですが、少し後には同期の川崎琉一も加わって、4人で練習していました。
 </span>
                 </div>
 
@@ -213,8 +260,7 @@
                 </div>
                                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">2年生の大きな出来事としては関根皐太郎（VIKINGS MF #71）と鈴木康晟が仲間に加わったことです。関根は当時俺が嫌いなうるさいグループに属してた一人でした（笑）
-当時は人数が一桁に満たない人数だったので、城西大学の漫画みたいなシンデレラストーリーを叶えるために、とにかく仲間集めを本気で頑張りました。 二年の終わりくらいには10人くらいの規模になりました。
+                    <span class="dialogue-text">2年生の大きな出来事としては関根皐太郎（VIKINGS MF #71）と鈴木康晟が仲間に加わったことです。関根は当時俺が嫌いなうるさいグループに属してた一人でした（笑）<br>当時は人数が一桁に満たない人数だったので、城西大学の漫画みたいなシンデレラストーリーを叶えるために、とにかく仲間集めを本気で頑張っていて、二年の終わりくらいには10人くらいの規模になりました。
 </span></div>
 
 
@@ -229,7 +275,7 @@
                 </div>
                                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">ノウハウも何もないしラクロスを教えてくれる人もいなかったから、ひたすら壁当てか1on1しかしていなかったです。コーチとしてOBの秀さん（城西大学HC 中澤秀行さん）がいたのですが、何も口出しすることなく自分を自由にやらせてくれたことにはとても感謝しています。ある意味「指導してくれなかったこと」のおかげで自分の自由なプレースタイルが確立されたんだと思います。また秀さんはとにかくラクロスへの愛が強い人でした。接していて、ラクロスの楽しさやスポーツの本質を教えてくれたと感じています。 秀さんのおかげで、小学校以来忘れていた「スポーツが楽しい」という当たり前の感情を思い出すことができました。</span>
+                    <span class="dialogue-text">ノウハウも何もないしラクロスを教えてくれる人もいなかったので、ひたすら壁当てか1on1しかしていなかったです。コーチとしてOBの秀さん（城西大学HC 中澤秀行さん）がいたのですが、何も口出しすることなく自分を自由にやらせてくれたことにはとても感謝しています。<br>ある意味「指導してくれなかったこと」のおかげで自分の自由なプレースタイルが確立されたんだと思います。また秀さんはとにかくラクロスへの愛が強い人でした。接していて、ラクロスの楽しさやスポーツの本質を教えてくれたと感じています。 秀さんのおかげで、小学校以来忘れていた「スポーツが楽しい」という当たり前の感情を思い出すことができました。</span>
                 </div>
 
                 <div class="dialogue">
@@ -238,7 +284,7 @@
 </div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">5月にあったあすなろカップは自分が初めて出た試合でしたが、慶應武蔵合同チームとやって何もできず、オフェンス時間も全然なくてボコボコに負けました。その時初めて他大学のラクロッサーと連絡先を交換して、それが小川豪（ADVANCE）でした。豪が覚えているかわからないけど笑<br>8月のリーグ戦は玉川と合同で出場しました。神奈川戦で、当時から無双していた箱崎蒼太選手（Grizzlies）にボコボコにされて悔しかったことが一番印象に残っています。合同とはいえリーグ戦に出場できたことは嬉しかったですが、それ以上に何もできなかったことが悔しくても、それでより一層ラクロス熱が入っていった感じです。<br>またリーグ戦の終了後の関東オールスター戦に出場したのですが、そこでマッチアップした袖山朋弥さん（KAWASAKI CONS）にずっと1on1を仕掛けて、ボコボコにされ続けたことも印象に残っています。マジでその時、本当に手も足もでず1ミリも通用しなかったので衝撃でした。「世界広すぎだろ」「俺、このままじゃダメだ」ってなったきっかけにもなりました。ボコボコにされて悔しすぎて、試合が終わった後に袖山さんに連絡先を交換してもらって、武者にも何度か伺いました。</span></div>
+                    <span class="dialogue-text">5月にあったあすなろカップは自分が初めて出た試合でしたが、慶應武蔵合同チームとやって何もできず、オフェンス時間も全然なくてボコボコに負けました。その時初めて他大学のラクロッサーと連絡先を交換して、それが小川豪（ADVANCE）でした。豪が覚えているかわからないけど笑。<br>8月のリーグ戦は玉川と合同で出場しました。神奈川戦で、当時から無双していた箱崎蒼太選手（Grizzlies）にボコボコにされて悔しかったことが一番印象に残っています。合同とはいえリーグ戦に出場できたことは嬉しかったですが、それ以上に何もできなかったことが悔しくても、それでより一層ラクロス熱が入っていった感じです。<br>またリーグ戦の終了後の関東オールスター戦に出場したのですが、そこでマッチアップした袖山朋弥さん（KAWASAKI FALCONS）にずっと1on1を仕掛けて、ボコボコにされ続けたことも印象に残っています。マジでその時、本当に手も足もでず1ミリも通用しなかったので衝撃でした。「世界広すぎだろ」「俺、このままじゃダメだ」ってなったきっかけにもなりました。ボコボコにされて悔しすぎて、試合が終わった後に袖山さんに連絡先を交換してもらって、武者にも何度か伺いました。</span></div>
 
                     <div class="article-content">
                 <!-- 導入画像 -->
@@ -251,16 +297,16 @@
 </div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">引き続き新歓を頑張って、ようやく城西大学単独チームで出られるだけの人数が揃ったのはよかったです。このまま今年3部から2部に昇格して、来年2部から1部に昇格する、っていうストーリーがいよいよ現実にできるんだと意気込んでいました。ただとりあえず自分は去年のリーグ戦での悔しさがあったので城西単独で出られる嬉しさよりも、「俺が活躍するんだ」っていう意気込みの方が大きかったです。この辺りからよりラクロスに本気で取り組まなきゃいけないと思って、バイトも辞めてラクロス一本に絞りました。<br>ただこの頃からの後輩への関わり方は、今でもめちゃくちゃ後悔しています。自分のラクロスへの熱量を周りにも求めてしまっており、周りが自分と同じくらい本気でラクロスに向き合ってないということが許せなくて正直後輩へ強く当たってしまうことも多かったです。</span> </div>
+                    <span class="dialogue-text">引き続き新歓を頑張って、ようやく城西大学単独チームで出られるだけの人数が揃ったのはよかったです。このまま今年3部から2部に昇格して、来年2部から1部に昇格する、っていうストーリーがいよいよ現実にできるんだと意気込んでいました。<br>ただとりあえず自分は去年のリーグ戦での悔しさがあったので城西単独で出られる嬉しさよりも、「俺が活躍するんだ」っていう意気込みの方が大きかったです。この辺りからよりラクロスに本気で取り組まなきゃいけないと思って、バイトも辞めてラクロス一本に絞りました。<br>ただ当時の後輩への関わり方は、今でもめちゃくちゃ後悔しています。自分のラクロスへの熱量を周りにも求めてしまっており、周りが自分と同じくらい本気でラクロスに向き合ってないということが許せなくて正直後輩へ強く当たってしまうことも多かったです。</span> </div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">松本</span>
                     <span class="dialogue-text">３年生のリーグ戦について教えてください。
 </span> </div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">開幕戦は千葉戦でした。前日夜から去年の悔しさもあって、絶対にやってやろうっていう気持ちが溢れていました。興奮しすぎてあまり寝られず、当日は朝日が昇る前からずっと壁当てをしていました。ですが当日気温が高く寝不足もたたって試合中に熱中症になってしまい、試合そのものに全然参加できなかったです。結局試合もボコボコにされてしまい、悔しすぎて泣いてしまったのを覚えています<br>2戦目の帝京大学戦では、単独出場としての初めての1勝を挙げることができました。ただこの試合でも自分は何もできなかったです。誰よりも一番取り組んでいた自信があったからこそ、何もできなかったことが本当に悔しくてチームとしての記念すべき初勝利も全く嬉しくなかったです。臨海公園の道路の脇で泣いてたら、親がたまたま車で通りかかって慰めてくれました。<br>3戦目の大東文化大も勝利したのですが、やはり活躍できず、次の駒澤戦では初得点を取ったのですが、1-5で負けてしまいました。結局リーグ戦はこれで終了となり、４試合1得点と散々な結果で終わってしまいました。自分が一番やってるのになんで結果が出ないんだろう、もっと取れるはず、もっと活躍できるはずだという気持ちで悶々としていました。<br>ただリーグ戦が終わった後に参加した鹿島オープンで優勝することができたのは大きかったです。チームとしての優勝はもちろん、個人でもMVPを受賞することができました。ようやく自分の思い描いていたようなプレーができて、チームとしての結果も出せたという意味で非常に重要な機会だったと思います。それから新シーズンまではVIKINGS含め社会人チームの練習に何度か参加したりと自分の視野を広げる時期にしていました。特にVIKINGSの大賀さん（山上大賀さんVIKINGS #14）には優しくしていただいたので、そんなご縁もあり後にVIKINGSに入団することになります。</span></div>
+                    <span class="dialogue-text">開幕戦は千葉戦でした。前日夜から去年の悔しさもあって、絶対にやってやろうっていう気持ちが溢れていました。興奮しすぎてあまり寝られず、当日は朝日が昇る前からずっと壁当てをしていました。ですが当日気温が高く寝不足もたたって試合中に熱中症になってしまい、試合そのものに全然参加できなかったです。結局試合もボコボコにされてしまい、悔しすぎて泣いてしまったのを覚えています<br>2戦目の帝京大学戦では、単独出場としての初めての1勝を挙げることができました。ただこの試合でも自分は何もできなかったです。誰よりも一番取り組んでいた自信があったからこそ、何もできなかったことが本当に悔しくてチームとしての記念すべき初勝利も全く嬉しくなかったです。臨海公園の道路の脇で泣いてたら、親がたまたま車で通りかかって慰めてくれました。<br>3戦目の大東文化大も勝利したのですが、やはり活躍できず、次の駒澤戦では初得点を取ったのですが、1-5で負けてしまいました。<br>結局リーグ戦はこれで終了となり、4試合1得点と散々な結果で終わってしまいました。自分が一番やってるのになんで結果が出ないんだろう、もっと取れるはず、もっと活躍できるはずだという気持ちで悶々としていました。<br><br>ただリーグ戦が終わった後に参加した鹿島オープンで優勝することができたのは大きかったです。チームとしての優勝はもちろん、個人でもMVPを受賞することができました。ようやく自分の思い描いていたようなプレーができて、チームとしての結果も出せたという意味で非常に重要な機会だったと思います。それから新シーズンまではVIKINGS含め社会人チームの練習に何度か参加したりと自分の視野を広げる時期にしていました。特にVIKINGSの大賀さん（山上大賀さんVIKINGS #14）には優しくしていただいたので、そんなご縁もあり後にVIKINGSに入団することになります。</span></div>
 
-                    <div style="display: flex; justify-content: center;">
+ <div style="display: flex; justify-content: center;">
                         <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DGA-qjSzQXs/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DGA-qjSzQXs/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">この投稿をInstagramで見る</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DGA-qjSzQXs/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">清水 大貴(@dike_lax4life)がシェアした投稿</a></p></div></blockquote>
 <script async src="//www.instagram.com/embed.js"></script>
   </div>
@@ -280,16 +326,16 @@
                     <span class="dialogue-text">4年生のリーグ戦についても教えてください。</span></div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">とにかくリーグ戦までは壁当てをやりまくってました。テーピングに血が滲むくらい。意気込んだ3年のリーグ戦で結局あんまり活躍できなくて、その後の鹿島オープンで結果が出たこともあって、今年こそは絶対に活躍してやると強い思いを持っていました。チームとしてもリーグ戦前の練習試合の武蔵大学戦で4点取ることができたので、1部相手にこれだけやれるんだからいけるだろう、とより自信が増していました。</span></div>
+                    <span class="dialogue-text">とにかくリーグ戦までは壁当てをやりまくってました。テーピングに血が滲むまで続けた日もありました。意気込んだ3年のリーグ戦で結局あんまり活躍できなくて、その後の鹿島オープンで結果が出たこともあって、今年こそは絶対に活躍してやると強い思いを持っていました。<br>また、チームとしてもリーグ戦前の練習試合の武蔵大学戦で4点取ることができたので、1部相手にこれだけやれるんだ、とより自信が増していました。</span></div>
 
-　　　　　　　　　　　　<div style="display: flex; justify-content: center;">
+                    <div style="display: flex; justify-content: center;">
     <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJTuPwdB7v4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DJTuPwdB7v4/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">この投稿をInstagramで見る</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DJTuPwdB7v4/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">清水 大貴(@dike_lax4life)がシェアした投稿</a></p></div></blockquote>
 <script async src="//www.instagram.com/embed.js"></script>
 </div>
 
-                    <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text"></span>
-                    リーグ戦の初戦は埼玉大学戦でした。埼玉には鹿島オープンの決勝で勝っていることもあったし、ブロックの組み合わせ的にもこの試合に負けてしまうと昇格が遠のくという大一番だったので、絶対に負けられない試合でした。しかし5-7で負けてしまい、いきなり苦しい立ち上がりになりました。<br>落ち込む暇もなく次戦の関東学院戦では大勝し、3戦目の上智戦を迎えました。2部昇格のためには絶対に負けられない状況でしたが、この試合は自分が1点目を決めて、さらにチームを勢いつけるブレイクの時に得点も決めたのですが、終盤に巻き返されて逆転負けを喫しました。今までと違って自分が活躍できた分、チームが負けて2部昇格が潰えたことが余計に悔しかったです。俺一人が頑張って、俺が上手くなることばかり考えてたし、「自分くらいやる気がないやつはなんなんだ」と思っていましたが、この敗戦を経て自分がわがままな人間だったとようやく気づきまし、チームとしての強さも作れなかったことにも気づきました。</span></div>
+<span class="dialogue-speaker speaker">清水</span>
+<span class="dialogue-text"></span>
+                    リーグ戦の初戦は埼玉大学戦でした。埼玉には鹿島オープンの決勝で勝っていることもあったし、ブロックの組み合わせ的にもこの試合に負けてしまうと昇格が遠のくという大一番だったので、絶対に負けられない試合でした。しかし5-7で負けてしまい、いきなり苦しい立ち上がりになりました。<br>落ち込む暇もなく次戦の関東学院戦では大勝し、3戦目の上智戦を迎えました。2部昇格のためには絶対に負けられない状況でしたが、この試合は自分が1点目を決めて、さらにチームを勢いつけるブレイクの時に得点も決めたのですが、終盤に巻き返されて逆転負けを喫しました。今までと違って自分が活躍できた分、チームが負けて2部昇格が潰えたことが余計に悔しかったです。俺一人が頑張って、俺が上手くなることばかり考えてたし、「自分くらいやる気がないやつはなんなんだ」と思っていましたが、この敗戦を経て自分がわがままな人間だったとようやく気づきまし、チームとしての強さも作れていなかったことにも気づきました。</span></div>
 
 
                     <div style="display: flex; justify-content: center;">
@@ -300,13 +346,11 @@
 
                     <div class="article-content">
                 <!-- 導入画像 -->
-                <div class="article-image">
-                    <img src="images/column_shimizu/kaishin.JPG" alt="">
-                </div>
-                        
+            
+        
                     <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">2部昇格がなくなってからは、練習もチームとしても一体感を持って楽しくやることにフォーカスして取り組みました。そうやってシフトチェンジして臨んだ日大戦では7対2で勝利し、個人としても華のあるプレーを連発して活躍することができました。ラクロスの楽しさが一番感じられた試合だったと言い切れます。</span></div>
+                    <span class="dialogue-text">2部昇格がなくなってからは、練習もチームとしても一体感を持って楽しくやることにフォーカスして取り組みました。<br>そうやってシフトチェンジして臨んだ日大戦では7対2で勝利し、個人としても華のあるプレーを連発して活躍することができました。ラクロスの楽しさが一番感じられた試合だったと言い切れます。</span></div>
 
                     <div style="display: flex; justify-content: center;">
                         <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DBptyRTy5c1/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DBptyRTy5c1/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">この投稿をInstagramで見る</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DBptyRTy5c1/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">清水 大貴(@dike_lax4life)がシェアした投稿</a></p></div></blockquote>
@@ -320,7 +364,7 @@
 
                     <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>   
-                    引退試合となった成城戦は3対3の同点でした。成城はすでに2部昇格を決めていたので、成城相手に同点まで行けるなら、埼玉大に勝っておけば……とか、自分の立ち回り次第で違う結果にできたのかな、とか試合後は複雑な気持ちでしたし、４年間本気で打ち込んだ学生ラクロス引退という喪失感は大きかったです。引退後もラクロスは続けるつもりだったので、その後は学生時代にお世話になった大賀さんがいるVIKINGSに入ることにしました。</span></div>
+                    引退試合となった成城戦は3対3の同点でした。成城はすでに2部昇格を決めていたので、成城相手に同点まで行けるなら、埼玉大に勝っておけば……とか、自分の立ち回り次第で違う結果にできたのかな、とか試合後は複雑な気持ちでしたし、４年間本気で打ち込んだ学生ラクロス引退という喪失感は大きかったです。</span></div>
 
                      <div class="article-image">
                     <img src="images/column_shimizu/intai.JPG" alt="">
@@ -332,9 +376,10 @@
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">松本</span>
                     <span class="dialogue-text">社会人ラクロスに触れたこの一年を振り返ってください。</span> </div>
+
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">基本的には朝4時半とかに起きて筋トレをして、仕事から帰ってきたら壁当てみたいな生活でした。ラクロスに触れない日は基本なくて何かしら壁当てなり筋トレなりやってました。<br>ただVIKINGSでのラクロス経験は正直挫折というか、自分がやりたかったことと違っていて、続けながらもどこかモヤモヤした気持ちがありました。今までちゃんとしたラクロスの戦術とかを知らないままやっていたので、社会人チームで６人で点を取るための戦術とかを求められるようになった時に、自分の自由なプレースタイルが制限されてしまうことがやっぱり嫌だったんだと思います。わがままですが。ある意味で、やっぱり自分は自分のフィールドで勝負したいと再確認するための良い機会であったとも思いますし、より圧倒的な実力がないとそもそも自分のようなプレースタイルは認められづらいなということも感じたので、こういう気持ちも相まり海外挑戦といった目標も頭をよぎるようになりました。そして何よりラクロスをやってなかったら絶対に人生で関わることのなかった大学の人たちとも繋がることができたのは大きな財産だったと思っていて、VIKINGSに入団したことに全く後悔はないです。</span> </div>
+                    <span class="dialogue-text">基本的には朝4時半とかに起きて筋トレをして、仕事から帰ってきたら壁当てみたいな生活でした。ラクロスに触れない日は基本なくて何かしら壁当てなり筋トレなりやっていました。<br>ただVIKINGSでのラクロス経験は正直挫折というか、自分がやりたかったことと違っていて、続けながらもどこかモヤモヤした気持ちがありました。今までちゃんとしたラクロスの戦術とかを知らないままやっていたので、社会人チームで６人で点を取るための戦術とかを求められるようになった時に、自分の自由なプレースタイルが制限されてしまうことがやっぱり嫌だったんだと思います。わがままですが。ある意味で、やっぱり自分は自分のフィールドで勝負したいと再確認するための良い機会であったとも思いますし、より圧倒的な実力がないとそもそも自分のようなプレースタイルは認められづらいなということも感じたので、こういう気持ちも相まり海外挑戦といった目標も頭をよぎるようになりました。ただ、ラクロスをやってなかったら絶対に人生で関わることのなかった大学の人たちとも繋がることができたのは大きな財産だったと思っていて、VIKINGSに入団したことに全く後悔はないです。</span> </div>
 
                     <div class="article-content">
                 <!-- 導入画像 -->
@@ -346,14 +391,14 @@
                     <span class="dialogue-text">カナダ挑戦を明確に意識するようになったのはいつですか？</span> </div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">明確にいつというのは覚えていないですが、NLLやboxラクロスの華のあるプレースタイルとか、クロスワークとか、文化とかに魅力を感じるようになっていました。そんな時にlacrosse nation programでboxラクロスを教えているTravis Taylorに出会いました。実際に彼に教わったり、boxリーグに参加していく中で、身体能力だけではごまかせないラクロスのより本質的な部分がわかってきて、自分はアスリートというより”ラクロッサー”になりたいんだと気づいたんです。”ラクロッサー”になるため、カナダに行って本場のラクロス文化に触れたい、自分がどこまでいけるんだろう、と思いこの挑戦を決意するようになりました。</span> </div>
+                    <span class="dialogue-text">明確にいつというのは覚えていないですが、NLLやboxラクロスの華のあるプレースタイルやクロスワークとか、文化など魅力を感じるようになっていました。そんな時にlacrosse nation programでboxラクロスを教えているTravis Taylor（東京大学HC）に出会いました。<br>実際に彼に教わったり、boxリーグに参加していく中で、身体能力だけではごまかせないラクロスのより本質的な部分がわかってきて、自分はアスリートというより”ラクロッサー”になりたいんだと気づいたんです。”ラクロッサー”になるため、カナダに行って本場のラクロス文化に触れたい、自分がどこまでいけるんだろう、と思いこの挑戦を決意するようになりました。</span> </div>
                 
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">松本</span>
                     <span class="dialogue-text">カナダ挑戦をするというモチベーションの根源に来るものはなんですか？</span></div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">一番根源に来るのは、自分の生き様によって他の人にいい影響を与えたい、本気で何かに取り組むことのかっこよさを伝えたいという気持ちです。自分にとってのラクロスがそうであったように、自分も誰かにとってのヒーローでありたいです。自分がラクロスと本気で向き合っている姿を誰かが見て、その人の人生がより良い方向に向かうよう影響を与えられる人間、この人みたいになりたいと思ってくれるような人間になりたいです。また、ラクロスやっている人だけではなく、過去の自分と同じように心に穴が空いてしまった人にも、自分の生き様を見て何かを感じとってくれるような人間になりたいです。<span> </div>
+                    <span class="dialogue-text">一番根源に来るのは、自分の生き様によって他の人にいい影響を与えたい、本気で何かに取り組むことのかっこよさを伝えたいという気持ちです。自分にとってのラクロスがそうであったように、自分も誰かにとってのヒーローでありたいんです。自分がラクロスと本気で向き合っている姿を誰かが見て、その人の人生がより良い方向に向かうよう影響を与えられる人間、この人みたいになりたいと思わせるような人間になりたいです。<br>また、ラクロスやっている人だけではなく、過去の自分と同じように心に穴が空いてしまった人にも、自分の生き様を見て何かを感じとってくれるような人間になりたいです。<span> </div>
 
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">松本</span>
@@ -361,13 +406,13 @@
 </span> </div>
                 <div class="dialogue">
                     <span class="dialogue-speaker speaker">清水</span>
-                    <span class="dialogue-text">難しいですね。ラクロスは自分のものではなく、長い歴史の中で受け継がれてきたカルチャーだと思っています。自分はそのカルチャー借りている存在に過ぎません。このスポーツが本当に好きで、自分はラクロスを“やっている”というより、このカルチャーを借りて生きている感覚に近いです。なので今後は"ラクロッサー"としていい影響を与えられる人間になるために、本気でラクロスに向き合い続けたいし、その様子も引き続き発信していきたいです。また当然向こうで学んだことを日本ラクロスに還元したいとも思っています。      
+                    <span class="dialogue-text">難しいですね。ラクロスは自分のものではなく、長い歴史の中で受け継がれてきたカルチャーだと思っています。自分はそのカルチャー借りている存在に過ぎません。このスポーツが本当に好きで、自分はラクロスを“やっている”というより、このカルチャーを借りて生きている感覚に近いです。<br>なので今後は"ラクロッサー"としていい影響を与えられる人間になるために、本気でラクロスに向き合い続けたいし、その様子も引き続き発信していきたいです。また当然向こうで学んだことを日本ラクロスに還元したいとも思っています。      
                     </span></div>
 
 
 
 
-     <div class="dialogue">
+<div class="dialogue">
                     <span class="dialogue-speaker speaker">松本</span>
                     <span class="dialogue-text">最後に伝えたいことはありますか？
 </span> </div>
