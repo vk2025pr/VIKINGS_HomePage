@@ -71,6 +71,19 @@ h1 {
   z-index: 1;
 }
 
+.member-card .captain-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f4b22a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  z-index: 1;
+}
+
 
 
 /* レスポンシブ対応 */
